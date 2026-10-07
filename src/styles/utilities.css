@@ -1,0 +1,28 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.checker {
+  background-color: var(--color-checker-light);
+  background-image: conic-gradient(
+    var(--color-checker-dark) 25%,
+    transparent 0 50%,
+    var(--color-checker-dark) 0 75%,
+    transparent 0
+  );
+  background-size: var(--checker-size) var(--checker-size);
+}
+
+.glass {
+  background: var(--color-glass);
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
+}

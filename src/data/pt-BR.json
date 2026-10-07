@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "title": "Acervo de Plantas",
+    "description": "Biblioteca privada de PNGs de plantas para colagens de arquitetura."
+  },
+  "pages": {
+    "plants": {
+      "title": "Plantas",
+      "description": "Busque, filtre e copie as plantas do acervo."
+    },
+    "collections": {
+      "title": "Coleções",
+      "description": "Grupos de plantas por projeto."
+    },
+    "login": {
+      "title": "Entrar",
+      "description": "Acesse o seu acervo."
+    }
+  }
+}
