@@ -1,6 +1,5 @@
-import { PagePlaceholder } from '@/components/ui/PagePlaceholder/PagePlaceholder';
-import { copy } from '@/data/copy';
+import { LoginScreen } from '@/components/auth/LoginScreen/LoginScreen';
 
 export default function LoginPage() {
-  return <PagePlaceholder {...copy.pages.login} />;
+  return <LoginScreen />;
 }

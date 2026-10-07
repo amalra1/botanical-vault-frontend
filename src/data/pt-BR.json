@@ -11,10 +11,20 @@
     "collections": {
       "title": "Coleções",
       "description": "Grupos de plantas por projeto."
-    },
-    "login": {
-      "title": "Entrar",
-      "description": "Acesse o seu acervo."
+    }
+  },
+  "login": {
+    "title": "Acervo de Plantas",
+    "subtitle": "Entre para acessar o seu acervo.",
+    "emailLabel": "E-mail",
+    "passwordLabel": "Senha",
+    "submit": "Entrar",
+    "submitting": "Entrando…",
+    "errors": {
+      "emailInvalid": "Informe um e-mail válido.",
+      "passwordRequired": "Informe a senha.",
+      "invalidCredentials": "E-mail ou senha incorretos.",
+      "unexpected": "Não foi possível entrar. Tente novamente."
     }
   }
 }

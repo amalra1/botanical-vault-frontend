@@ -1,0 +1,26 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: var(--control-lg);
+  padding: 0 var(--space-xl);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-forest);
+  color: var(--color-white);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  transition:
+    box-shadow var(--duration-fast) ease,
+    opacity var(--duration-fast) ease;
+}
+
+.button:hover:not(:disabled) {
+  box-shadow: var(--shadow-control);
+}
+
+.button:disabled {
+  cursor: default;
+  opacity: var(--opacity-disabled);
+}
