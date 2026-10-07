@@ -5,9 +5,12 @@
 }
 
 .label {
-  color: var(--color-text-strong);
-  font-size: var(--text-sm);
+  color: var(--color-forest);
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
   font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
 }
 
 .input {

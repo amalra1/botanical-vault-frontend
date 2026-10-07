@@ -12,6 +12,9 @@
   --color-surface-subtle: #f0f3f1;
   --color-mint-soft: #e1f5ea;
   --color-favorite: #d9381e;
+  --color-leaf-dark: #2f5b33;
+  --color-leaf: #3f7d3a;
+  --color-leaf-light: #6fa84b;
   --color-danger: #b8321c;
 
   --color-text: var(--color-forest);
@@ -58,10 +61,20 @@
   --space-3xl: 48px;
   --space-4xl: 64px;
 
-  --font-sans:
-    Aeonik, -apple-system, BlinkMacSystemFont, 'SF Pro Text',
-    var(--font-hanken), 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-archivo), 'Arial Black', sans-serif;
+  --font-body:
+    var(--font-archivo), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, 'SF Mono', monospace;
+  --font-scientific: var(--font-instrument-serif), Georgia, serif;
 
+  --display-stretch: 125%;
+  --display-weight: 900;
+  --leading-display: 0.9;
+  --tracking-display: -0.03em;
+  --tracking-label: 0.1em;
+  --tracking-button: 0.12em;
+
+  --text-3xs: 11px;
   --text-2xs: 12px;
   --text-xs: 13px;
   --text-sm: 14px;
@@ -71,14 +84,12 @@
   --text-2xl: 21px;
   --text-3xl: 24px;
   --text-4xl: 32px;
+  --text-display-md: 40px;
+  --text-display-xl: clamp(48px, 8vw, 88px);
 
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
-
-  --tracking-tight: -0.02em;
-  --tracking-tighter: -0.03em;
-  --tracking-caps: 0.06em;
 
   --control-sm: 28px;
   --control-md: 40px;
@@ -87,12 +98,17 @@
   --content-max: 1240px;
   --header-height: 64px;
   --auth-card-max: 400px;
+  --vine-top-right-size: 280px;
+  --vine-bottom-left-size: 300px;
+  --vine-top-left-size: 170px;
+  --vine-stem-width: 2.5;
   --gutter: var(--space-xl);
 
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
   --duration-fast: 200ms;
   --duration-base: 250ms;
   --duration-slow: 300ms;
+  --duration-vine: 1400ms;
 
   --focus-ring-width: 3px;
   --focus-ring-offset: 3px;

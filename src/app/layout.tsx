@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { copy } from '@/data/copy';
-import { hankenGrotesk } from './fonts';
+import { cx } from '@/lib/classNames';
+import { fontVariables } from './fonts';
 import '@/styles/tokens.css';
 import '@/styles/reset.css';
 import '@/styles/focus.css';
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="pt-BR" className={hankenGrotesk.variable}>
+    <html lang="pt-BR" className={cx(...fontVariables)}>
       <body>{children}</body>
     </html>
   );
