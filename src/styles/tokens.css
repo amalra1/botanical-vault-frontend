@@ -45,10 +45,7 @@
   --border-width: 1px;
   --opacity-disabled: 0.5;
 
-  --radius-sm: 9px;
-  --radius-md: 22px;
-  --radius-lg: 30px;
-  --radius-pill: 999px;
+  --radius: 6px;
 
   --space-3xs: 2px;
   --space-2xs: 4px;
@@ -88,6 +85,7 @@
   --control-lg: 44px;
 
   --content-max: 1240px;
+  --header-height: 64px;
   --auth-card-max: 400px;
   --gutter: var(--space-xl);
 

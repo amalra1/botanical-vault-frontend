@@ -3,6 +3,7 @@ import type { ButtonProps } from '@/types/components/ui';
 import styles from './Button.module.css';
 
 export function Button({
+  variant = 'primary',
   isLoading = false,
   disabled,
   className,
@@ -12,7 +13,7 @@ export function Button({
   return (
     <button
       type={type}
-      className={cx(styles.button, className)}
+      className={cx(styles.button, styles[variant], className)}
       disabled={disabled || isLoading}
       aria-busy={isLoading || undefined}
       {...buttonProps}

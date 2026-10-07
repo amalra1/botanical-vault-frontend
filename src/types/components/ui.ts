@@ -5,7 +5,10 @@ export interface PagePlaceholderProps {
   description: string;
 }
 
+export type ButtonVariant = 'primary' | 'secondary';
+
 export interface ButtonProps extends ComponentPropsWithRef<'button'> {
+  variant?: ButtonVariant;
   isLoading?: boolean;
 }
 

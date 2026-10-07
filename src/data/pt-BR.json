@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "title": "Acervo de Plantas",
+    "title": "Cofre de Plantas",
     "description": "Biblioteca privada de PNGs de plantas para colagens de arquitetura."
   },
   "pages": {
     "plants": {
       "title": "Plantas",
-      "description": "Busque, filtre e copie as plantas do acervo."
+      "description": "Busque, filtre e copie as plantas do cofre."
     },
     "collections": {
       "title": "Coleções",
@@ -14,8 +14,8 @@
     }
   },
   "login": {
-    "title": "Acervo de Plantas",
-    "subtitle": "Entre para acessar o seu acervo.",
+    "title": "Cofre de Plantas",
+    "subtitle": "Entre para abrir o seu cofre.",
     "emailLabel": "E-mail",
     "passwordLabel": "Senha",
     "submit": "Entrar",
@@ -26,5 +26,8 @@
       "invalidCredentials": "E-mail ou senha incorretos.",
       "unexpected": "Não foi possível entrar. Tente novamente."
     }
+  },
+  "header": {
+    "logout": "Sair"
   }
 }

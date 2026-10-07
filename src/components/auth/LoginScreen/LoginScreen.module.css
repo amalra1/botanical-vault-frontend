@@ -12,7 +12,7 @@
   width: 100%;
   max-width: var(--auth-card-max);
   padding: var(--space-3xl) var(--space-2xl);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   background: var(--color-surface);
   box-shadow: var(--shadow-md);
 }

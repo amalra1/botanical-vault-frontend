@@ -1,0 +1,26 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-glass);
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  max-width: var(--content-max);
+  min-height: var(--header-height);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.brand {
+  color: var(--color-forest);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
