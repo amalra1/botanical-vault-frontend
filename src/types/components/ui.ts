@@ -64,7 +64,6 @@ export type SegmentedValue = number | string;
 export interface SegmentedOption<T extends SegmentedValue> {
   value: T;
   label: string;
-  count?: number;
 }
 
 export type SegmentedControlSize = 'sm' | 'md';

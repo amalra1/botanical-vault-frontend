@@ -31,9 +31,6 @@ export function SegmentedControl<T extends SegmentedValue>({
           onClick={() => onChange(option.value)}
         >
           {option.label}
-          {option.count !== undefined && (
-            <span className={styles.count}>{option.count}</span>
-          )}
         </button>
       ))}
     </div>

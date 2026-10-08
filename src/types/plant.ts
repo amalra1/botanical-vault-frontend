@@ -71,30 +71,8 @@ export interface PlantSummary {
   favorite: boolean;
 }
 
-export interface FacetCount {
-  id: number;
-  count: number;
-}
-
-export interface FacetCounts {
-  all: number;
-  options: FacetCount[];
-}
-
-export interface OriginFacetCounts extends FacetCounts {
-  unclassified: number;
-}
-
-export interface PlantFacets {
-  types: FacetCounts;
-  origins: OriginFacetCounts;
-  sizes: FacetCounts;
-  views: FacetCounts;
-}
-
 export interface PlantSearchResult {
   plants: PlantSummary[];
-  facets: PlantFacets;
 }
 
 export interface KeyedPlantSearchResult {

@@ -25,12 +25,6 @@
     color var(--duration-fast) ease;
 }
 
-.count {
-  margin-left: var(--space-xs);
-  color: var(--color-text-subtle);
-  font-weight: var(--weight-medium);
-}
-
 .option[aria-pressed='true'] {
   background: var(--color-surface);
   color: var(--color-forest);

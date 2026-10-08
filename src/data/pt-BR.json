@@ -27,11 +27,7 @@
       "size": "Porte",
       "view": "Vista da imagem",
       "all": "Todas",
-      "unclassified": "Sem classificação",
-      "optionCount": {
-        "one": "1 planta",
-        "many": "{count} plantas"
-      }
+      "unclassified": "Sem classificação"
     },
     "results": {
       "allTitle": "Todas as plantas",

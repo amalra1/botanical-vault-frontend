@@ -2,23 +2,17 @@ import { FieldGroup } from '@/components/ui/FieldGroup/FieldGroup';
 import { SegmentedControl } from '@/components/ui/SegmentedControl/SegmentedControl';
 import { ALL_OPTION } from '@/constants/plantFilters';
 import { copy } from '@/data/copy';
-import { facetCount } from '@/lib/facetCount';
-import type { SegmentedFacetFilterProps } from '@/types/components/plantFilters';
+import type { SegmentedFilterProps } from '@/types/components/plantFilters';
 
-export function SegmentedFacetFilter({
+export function SegmentedFilter({
   label,
   items,
-  facet,
   value,
   onChange,
-}: SegmentedFacetFilterProps) {
+}: SegmentedFilterProps) {
   const options = [
-    { value: ALL_OPTION, label: copy.plants.filters.all, count: facet?.all },
-    ...items.map((item) => ({
-      value: String(item.id),
-      label: item.label,
-      count: facet && facetCount(facet, item.id),
-    })),
+    { value: ALL_OPTION, label: copy.plants.filters.all },
+    ...items.map((item) => ({ value: String(item.id), label: item.label })),
   ];
 
   return (

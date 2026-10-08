@@ -1,5 +1,5 @@
 import { OriginFilter } from '@/components/plants/OriginFilter/OriginFilter';
-import { SegmentedFacetFilter } from '@/components/plants/SegmentedFacetFilter/SegmentedFacetFilter';
+import { SegmentedFilter } from '@/components/plants/SegmentedFilter/SegmentedFilter';
 import { TypeFilter } from '@/components/plants/TypeFilter/TypeFilter';
 import { copy } from '@/data/copy';
 import type { PlantFiltersProps } from '@/types/components/plantFilters';
@@ -9,7 +9,6 @@ const FILTERS_COPY = copy.plants.filters;
 
 export function PlantFilters({
   taxonomies,
-  facets,
   filters,
   onChange,
 }: PlantFiltersProps) {
@@ -26,28 +25,24 @@ export function PlantFilters({
     <section aria-label={FILTERS_COPY.label} className={styles.filters}>
       <TypeFilter
         types={taxonomies.plantTypes}
-        facet={facets?.types}
         value={filters.typeId}
         onChange={(typeId) => onChange({ typeId })}
       />
       <div className={styles.groups}>
         <OriginFilter
           origins={taxonomies.origins}
-          facet={facets?.origins}
           value={filters.origin}
           onChange={(origin) => onChange({ origin })}
         />
-        <SegmentedFacetFilter
+        <SegmentedFilter
           label={FILTERS_COPY.size}
           items={sizeItems}
-          facet={facets?.sizes}
           value={filters.sizeId}
           onChange={(sizeId) => onChange({ sizeId })}
         />
-        <SegmentedFacetFilter
+        <SegmentedFilter
           label={FILTERS_COPY.view}
           items={viewItems}
-          facet={facets?.views}
           value={filters.viewId}
           onChange={(viewId) => onChange({ viewId })}
         />

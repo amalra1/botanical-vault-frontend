@@ -35,7 +35,6 @@ export function PlantsPage() {
       {taxonomies && (
         <PlantFilters
           taxonomies={taxonomies}
-          facets={result?.facets}
           filters={filters}
           onChange={updateFilters}
         />
