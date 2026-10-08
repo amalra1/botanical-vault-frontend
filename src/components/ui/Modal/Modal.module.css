@@ -1,0 +1,39 @@
+.dialog {
+  width: min(var(--modal-max), calc(100vw - 2 * var(--modal-viewport-gap)));
+  max-width: none;
+  max-height: calc(100dvh - 2 * var(--modal-viewport-gap));
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text-strong);
+  box-shadow: var(--shadow-modal);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  animation: enter var(--duration-base) var(--ease-out) both;
+}
+
+.dialog::backdrop {
+  background: var(--color-overlay);
+  animation: fade var(--duration-base) ease both;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-2xl);
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: scale(var(--modal-enter-scale));
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}

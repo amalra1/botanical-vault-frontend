@@ -28,6 +28,73 @@
     }
   },
   "header": {
-    "logout": "Sair"
+    "logout": "Sair",
+    "newPlant": "Nova planta"
+  },
+  "modal": {
+    "close": "Fechar"
+  },
+  "plantForm": {
+    "titleNew": "Nova planta",
+    "loading": "Carregando as listas…",
+    "retry": "Tentar de novo",
+    "drop": {
+      "title": "Adicionar imagens",
+      "description": "Arraste os PNGs da planta para cá ou clique para escolher",
+      "note": "PNG com fundo transparente · pode enviar várias de uma vez"
+    },
+    "images": {
+      "title": "Imagens",
+      "hint": "A primeira é a capa do card. Arraste para reordenar.",
+      "cover": "Capa",
+      "more": "Mais imagens",
+      "remove": "Remover {file}",
+      "reorder": "Reordenar {file}",
+      "viewGroup": "Vista de {file}",
+      "dragInstructions": "Para reordenar, pressione espaço, use as setas para mover e espaço de novo para soltar. Esc cancela.",
+      "dragStart": "{file} selecionada, na posição {position} de {total}.",
+      "dragOver": "{file} sobre a posição {position} de {total}.",
+      "dragEnd": "{file} solta na posição {position} de {total}.",
+      "dragCancel": "Reordenação cancelada. {file} voltou para o lugar."
+    },
+    "fields": {
+      "commonName": "Nome popular",
+      "commonNamePlaceholder": "Ex.: Butiá",
+      "suggestion": "Usar “{name}”, do nome do arquivo",
+      "scientificName": "Nome científico",
+      "scientificNamePlaceholder": "Ex.: Butia eriospatha",
+      "origin": "Origem",
+      "originHint": "Pode marcar mais de uma. Sem nada marcado, fica como “sem classificação”.",
+      "newOrigin": "Nova origem",
+      "newOriginName": "Nome da nova origem",
+      "newOriginPlaceholder": "Ex.: Exótica",
+      "addOrigin": "Adicionar",
+      "cancelOrigin": "Cancelar",
+      "type": "Tipo",
+      "size": "Porte",
+      "notes": "Notas",
+      "notesOptional": "(opcional)",
+      "notesPlaceholder": "Ex.: floração no inverno, boa para canteiros estreitos…"
+    },
+    "footer": {
+      "cancel": "Cancelar",
+      "save": "Salvar planta",
+      "saving": "Salvando…",
+      "saveDisabledHint": "Adicione imagens e preencha o nome popular, o tipo e o porte"
+    },
+    "errors": {
+      "commonNameRequired": "Informe o nome popular.",
+      "nameTooLong": "Use até {max} caracteres.",
+      "typeRequired": "Escolha o tipo.",
+      "sizeRequired": "Escolha o porte.",
+      "onlyPng": "Só aceitamos PNG. Ficou de fora: {files}.",
+      "invalidImage": "Uma das imagens não é um PNG válido.",
+      "fileTooLarge": "As imagens passam do limite de envio.",
+      "originNameRequired": "Informe o nome da origem.",
+      "duplicateOrigin": "Essa origem já existe.",
+      "originUnexpected": "Não foi possível criar a origem. Tente novamente.",
+      "loadTaxonomies": "Não foi possível carregar as listas. Tente novamente.",
+      "unexpected": "Não foi possível salvar a planta. Tente novamente."
+    }
   }
 }

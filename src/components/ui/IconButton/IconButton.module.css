@@ -1,0 +1,29 @@
+.button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: var(--control-lg);
+  height: var(--control-lg);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--color-forest);
+  transition:
+    box-shadow var(--duration-fast) ease,
+    background-color var(--duration-fast) ease;
+}
+
+.button:hover {
+  box-shadow: var(--shadow-control);
+}
+
+.muted {
+  background: var(--color-surface-muted);
+}
+
+.glass {
+  background: var(--color-glass);
+  -webkit-backdrop-filter: var(--badge-filter);
+  backdrop-filter: var(--badge-filter);
+}

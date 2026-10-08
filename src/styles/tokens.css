@@ -16,6 +16,11 @@
   --color-leaf: #3f7d3a;
   --color-leaf-light: #6fa84b;
   --color-danger: #b8321c;
+  --color-divider: rgba(1, 63, 34, 0.08);
+  --color-dropzone-border: #9fd9bc;
+  --color-dropzone-bg: #f8fbf9;
+  --color-dropzone-hover: #f1faf4;
+  --color-footer-glass: rgba(255, 255, 255, 0.92);
 
   --color-text: var(--color-forest);
   --color-text-strong: #0b1f14;
@@ -37,6 +42,7 @@
   --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.04), 0 12px 40px rgba(1, 63, 34, 0.1);
   --shadow-lift:
     0 2px 6px rgba(1, 63, 34, 0.05), 0 20px 48px rgba(1, 63, 34, 0.12);
+  --shadow-modal: 0 30px 80px rgba(1, 63, 34, 0.22);
   --shadow-control:
     0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(1, 63, 34, 0.1);
   --shadow-field-focus:
@@ -46,6 +52,8 @@
     0 0 0 5px rgba(105, 255, 147, 0.45), 0 12px 40px rgba(1, 63, 34, 0.1);
 
   --border-width: 1px;
+  --border-dashed-width: 2px;
+  --footer-filter: blur(12px);
   --opacity-disabled: 0.5;
 
   --radius: 6px;
@@ -70,6 +78,7 @@
   --display-stretch: 125%;
   --display-weight: 900;
   --leading-display: 0.9;
+  --leading-tight: 1.15;
   --tracking-display: -0.03em;
   --tracking-label: 0.1em;
   --tracking-button: 0.12em;
@@ -94,9 +103,24 @@
   --control-sm: 28px;
   --control-md: 40px;
   --control-lg: 44px;
+  --control-xl: 52px;
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 28px;
+  --icon-xl: 40px;
+  --add-tile-icon: 46px;
+  --drop-icon: 88px;
+  --type-disc: 68px;
 
   --content-max: 1240px;
   --header-height: 64px;
+  --modal-max: 900px;
+  --modal-viewport-gap: var(--space-xl);
+  --dropzone-max: 420px;
+  --dropzone-copy-max: 280px;
+  --image-tile-min: 170px;
+  --field-min: 240px;
+  --type-columns: 4;
   --auth-card-max: 400px;
   --vine-top-right-size: 280px;
   --vine-bottom-left-size: 300px;
@@ -109,6 +133,11 @@
   --duration-base: 250ms;
   --duration-slow: 300ms;
   --duration-vine: 1400ms;
+  --duration-reveal: 600ms;
+  --reveal-step: 80ms;
+  --reveal-distance: 18px;
+  --modal-enter-scale: 0.96;
+  --hover-scale: 1.015;
 
   --focus-ring-width: 3px;
   --focus-ring-offset: 3px;

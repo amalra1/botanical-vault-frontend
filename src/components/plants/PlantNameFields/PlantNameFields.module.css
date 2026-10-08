@@ -1,0 +1,41 @@
+.names {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--field-min), 1fr));
+  gap: var(--space-lg);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.suggestion {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: var(--control-md);
+  padding: 0 var(--space-md);
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--color-mint-soft);
+  color: var(--color-forest);
+  font-size: var(--text-sm);
+  transition: box-shadow var(--duration-fast) ease;
+}
+
+.suggestion:hover {
+  box-shadow: var(--shadow-control);
+}
+
+.suggestionIcon {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+
+.scientific input {
+  font-family: var(--font-scientific);
+  font-size: var(--text-lg);
+  font-style: italic;
+}

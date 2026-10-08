@@ -9,13 +9,14 @@
 
 .inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-lg);
+  gap: var(--space-sm) var(--space-lg);
   max-width: var(--content-max);
   min-height: var(--header-height);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: var(--space-sm) var(--gutter);
 }
 
 .brand {
@@ -26,4 +27,10 @@
   font-weight: var(--display-weight);
   letter-spacing: var(--tracking-display);
   text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
 }

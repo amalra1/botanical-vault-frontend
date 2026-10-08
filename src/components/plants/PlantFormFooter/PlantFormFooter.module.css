@@ -1,0 +1,30 @@
+.footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  margin: 0 calc(-1 * var(--space-2xl)) calc(-1 * var(--space-2xl));
+  padding: var(--space-lg) var(--space-2xl) var(--space-xl);
+  border-top: var(--border-width) solid var(--color-divider);
+  background: var(--color-footer-glass);
+  -webkit-backdrop-filter: var(--footer-filter);
+  backdrop-filter: var(--footer-filter);
+}
+
+.error {
+  flex: 1;
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-sm);
+}

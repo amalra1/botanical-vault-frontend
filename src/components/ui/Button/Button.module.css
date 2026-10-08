@@ -12,6 +12,7 @@
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-button);
   text-transform: uppercase;
+  white-space: nowrap;
   transition:
     box-shadow var(--duration-fast) ease,
     opacity var(--duration-fast) ease;
