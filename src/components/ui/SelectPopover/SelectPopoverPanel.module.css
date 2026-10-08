@@ -1,0 +1,101 @@
+.panel {
+  position: absolute;
+  top: calc(100% + var(--space-xs));
+  left: 0;
+  z-index: var(--z-popover);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: min(var(--picker-width), calc(100vw - 2 * var(--gutter)));
+  padding: var(--space-xs);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  transform-origin: top left;
+  animation: pop var(--duration-base) var(--ease-out) backwards;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-sm);
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  color: var(--color-forest);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  min-height: var(--control-md);
+  padding: 0 var(--space-sm) 0 calc(var(--space-sm) * 2 + var(--icon-sm));
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--color-surface-muted);
+  color: var(--color-text-strong);
+  font-size: var(--text-md);
+}
+
+.searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  max-height: var(--select-list-max);
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  width: 100%;
+  min-height: var(--control-lg);
+  padding: var(--space-xs) var(--space-sm);
+  border: 0;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--color-text-strong);
+  font-size: var(--text-md);
+  text-align: left;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.option:hover {
+  background: var(--color-surface-subtle);
+}
+
+.option[aria-pressed='true'] {
+  background: var(--color-mint-soft);
+  color: var(--color-forest);
+  font-weight: var(--weight-semibold);
+}
+
+.check {
+  color: var(--color-forest);
+}
+
+.note {
+  padding: var(--space-xs) var(--space-sm);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(var(--modal-enter-scale));
+  }
+}

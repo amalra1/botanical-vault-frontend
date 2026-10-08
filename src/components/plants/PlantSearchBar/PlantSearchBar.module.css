@@ -2,9 +2,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
-  max-width: var(--search-max);
-  margin: 0 auto;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .icon {
@@ -51,4 +50,10 @@
   font-family: var(--font-mono);
   font-size: var(--text-3xs);
   letter-spacing: var(--tracking-label);
+}
+
+@media (hover: none) {
+  .shortcut {
+    display: none;
+  }
 }

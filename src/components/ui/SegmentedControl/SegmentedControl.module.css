@@ -32,14 +32,6 @@
   box-shadow: var(--shadow-control);
 }
 
-.vertical {
-  flex-direction: column;
-}
-
-.vertical .option {
-  flex-basis: auto;
-}
-
 .sm .option {
   min-height: var(--control-sm);
   padding: 0 var(--space-sm);

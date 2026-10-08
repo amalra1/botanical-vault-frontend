@@ -1,17 +1,20 @@
 'use client';
 
+import { useId } from 'react';
 import { VineFrame } from '@/components/layout/VineFrame/VineFrame';
+import { FilterToggleButton } from '@/components/plants/FilterToggleButton/FilterToggleButton';
 import { PlantFilters } from '@/components/plants/PlantFilters/PlantFilters';
 import { PlantModalHost } from '@/components/plants/PlantModalHost/PlantModalHost';
 import { PlantResults } from '@/components/plants/PlantResults/PlantResults';
 import { PlantResultsHeader } from '@/components/plants/PlantResultsHeader/PlantResultsHeader';
 import { PlantSearchBar } from '@/components/plants/PlantSearchBar/PlantSearchBar';
 import { copy } from '@/data/copy';
+import { useFilterPanel } from '@/hooks/useFilterPanel';
 import { usePlantFilters } from '@/hooks/usePlantFilters';
 import { usePlantModal } from '@/hooks/usePlantModal';
 import { usePlantSearch } from '@/hooks/usePlantSearch';
 import { useTaxonomies } from '@/hooks/useTaxonomies';
-import { hasActiveFilters } from '@/lib/plantFilterParams';
+import { countActiveFilters, hasActiveFilters } from '@/lib/plantFilterParams';
 import { plantResultTitle } from '@/lib/plantResultTitle';
 import styles from './PlantsPage.module.css';
 
@@ -22,6 +25,9 @@ export function PlantsPage() {
   const { data: taxonomies } = useTaxonomies();
   const plantModal = usePlantModal();
   const isFiltered = hasActiveFilters(filters);
+  const activeFilterCount = countActiveFilters(filters);
+  const filterPanel = useFilterPanel(activeFilterCount > 0);
+  const filtersId = useId();
   const origins = taxonomies?.origins ?? [];
 
   return (
@@ -30,10 +36,19 @@ export function PlantsPage() {
         <VineFrame>
           <h1 className={styles.title}>{copy.pages.plants.title}</h1>
         </VineFrame>
-        <PlantSearchBar query={filters.query} onCommit={updateQuery} />
+        <div className={styles.searchRow}>
+          <PlantSearchBar query={filters.query} onCommit={updateQuery} />
+          <FilterToggleButton
+            isOpen={filterPanel.isOpen}
+            activeCount={activeFilterCount}
+            controls={filtersId}
+            onToggle={filterPanel.toggle}
+          />
+        </div>
       </div>
-      {taxonomies && (
+      {taxonomies && filterPanel.isOpen && (
         <PlantFilters
+          id={filtersId}
           taxonomies={taxonomies}
           filters={filters}
           onChange={updateFilters}

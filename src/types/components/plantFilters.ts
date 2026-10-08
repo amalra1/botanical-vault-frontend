@@ -1,5 +1,5 @@
 import type { OriginFilter, PlantFilters, PlantSortKey } from '@/types/plant';
-import type { Taxonomies, TaxonomyItem } from '@/types/taxonomy';
+import type { SizeItem, Taxonomies, TaxonomyItem } from '@/types/taxonomy';
 
 export interface PlantSearchBarProps {
   query: string;
@@ -12,30 +12,33 @@ export interface TypeFilterProps {
   onChange: (typeId: number | null) => void;
 }
 
-export interface OriginFilterOption {
-  value: OriginFilter;
-  label: string;
-}
-
 export interface OriginFilterProps {
   origins: TaxonomyItem[];
   value: OriginFilter;
   onChange: (origin: OriginFilter) => void;
 }
 
-export interface SegmentedFilterItem {
-  id: number;
-  label: string;
+export interface SizeFilterProps {
+  sizes: SizeItem[];
+  value: number | null;
+  onChange: (sizeId: number | null) => void;
 }
 
-export interface SegmentedFilterProps {
-  label: string;
-  items: SegmentedFilterItem[];
+export interface ViewFilterProps {
+  views: TaxonomyItem[];
   value: number | null;
-  onChange: (id: number | null) => void;
+  onChange: (viewId: number | null) => void;
+}
+
+export interface FilterToggleButtonProps {
+  isOpen: boolean;
+  activeCount: number;
+  controls: string;
+  onToggle: () => void;
 }
 
 export interface PlantFiltersProps {
+  id: string;
   taxonomies: Taxonomies;
   filters: PlantFilters;
   onChange: (patch: Partial<PlantFilters>) => void;

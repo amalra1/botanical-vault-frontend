@@ -155,7 +155,17 @@
   --staircase-floor-width: 2px;
   --staircase-grow-from: 0.4;
   --filter-tile-min: 120px;
-  --filter-group-min: 260px;
+  --filter-panel-offset: -8px;
+  --select-trigger-min: 200px;
+  --select-list-max: 260px;
+  --size-option-width: 40px;
+  --size-bar-width: 10px;
+  --size-bar-min: 6px;
+  --size-bar-max: 22px;
+  --viewfinder-corner: 8px;
+  --viewfinder-corner-width: 2px;
+  --viewfinder-corner-from: 0.6;
+  --filter-badge-size: 22px;
   --image-tile-min: 170px;
   --field-min: 240px;
   --type-columns: 4;
@@ -188,7 +198,9 @@
   --card-lift: -4px;
   --sprout-tilt: -35deg;
 
-  --z-snackbar: 3;
+  --z-popover: 2;
+  --z-header: 3;
+  --z-snackbar: 4;
 
   --focus-ring-width: 3px;
   --focus-ring-offset: 3px;

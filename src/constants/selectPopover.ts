@@ -1,0 +1,1 @@
+export const SELECT_SEARCH_MIN_OPTIONS = 6;

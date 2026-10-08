@@ -18,10 +18,18 @@
       "label": "Buscar plantas",
       "placeholder": "Buscar por nome popular ou científico",
       "clear": "Limpar busca",
-      "shortcut": "⌘ K"
+      "shortcutApple": "⌘ K",
+      "shortcutOther": "Ctrl K"
     },
     "filters": {
       "label": "Filtros",
+      "toggle": "Filtros",
+      "activeCount": {
+        "one": "1 filtro ativo",
+        "many": "{count} filtros ativos"
+      },
+      "originSearch": "Buscar origem",
+      "originEmpty": "Nenhuma origem encontrada",
       "type": "Tipo",
       "origin": "Origem",
       "size": "Porte",
@@ -77,7 +85,7 @@
   },
   "header": {
     "newPlant": "Nova planta",
-    "organize": "Organizar"
+    "settings": "Configurações"
   },
   "nav": {
     "label": "Principal",
@@ -310,6 +318,10 @@
       "scientificNamePlaceholder": "Ex.: Butia eriospatha",
       "origin": "Origem",
       "originHint": "Pode marcar mais de uma. Sem nada marcado, fica como “sem classificação”.",
+      "originNone": "Nenhuma marcada",
+      "originSeparator": ", ",
+      "originSearch": "Buscar origem",
+      "originEmpty": "Nenhuma origem encontrada",
       "type": "Tipo",
       "size": "Porte",
       "notes": "Notas",

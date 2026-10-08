@@ -1,8 +1,5 @@
 import { useSyncExternalStore } from 'react';
-
-function subscribeToNothing() {
-  return () => {};
-}
+import { subscribeToNothing } from '@/lib/staticStore';
 
 function isClientSnapshot() {
   return true;

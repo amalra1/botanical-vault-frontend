@@ -70,8 +70,6 @@ export interface SegmentedOption<T extends SegmentedValue> {
 
 export type SegmentedControlSize = 'sm' | 'md';
 
-export type SegmentedControlOrientation = 'horizontal' | 'vertical';
-
 export interface SegmentedControlProps<T extends SegmentedValue> {
   label?: string;
   labelledBy?: string;
@@ -79,12 +77,43 @@ export interface SegmentedControlProps<T extends SegmentedValue> {
   value: T | null;
   onChange: (value: T) => void;
   size?: SegmentedControlSize;
-  orientation?: SegmentedControlOrientation;
   className?: string;
 }
 
-export interface ToggleChipProps extends ComponentPropsWithRef<'button'> {
-  pressed: boolean;
+export type SelectValue = number | string | null;
+
+export interface SelectOption<T extends SelectValue> {
+  value: T;
+  label: string;
+}
+
+export interface SelectPopoverProps<T extends SelectValue> {
+  triggerLabel: string;
+  options: SelectOption<T>[];
+  isSelected: (value: T) => boolean;
+  onSelect: (value: T) => void;
+  closeOnSelect?: boolean;
+  searchLabel: string;
+  emptyLabel: string;
+}
+
+export interface SelectPopoverPanelProps<T extends SelectValue> {
+  id: string;
+  options: SelectOption<T>[];
+  isSelected: (value: T) => boolean;
+  onSelect: (value: T) => void;
+  searchLabel: string;
+  emptyLabel: string;
+}
+
+export type ViewfinderLayout = 'inline' | 'stacked';
+
+export interface ViewfinderProps<T extends SelectValue> {
+  label?: string;
+  options: SelectOption<T>[];
+  value: T;
+  onChange: (value: T) => void;
+  layout?: ViewfinderLayout;
 }
 
 export interface ChoiceTileProps extends ComponentPropsWithRef<'button'> {

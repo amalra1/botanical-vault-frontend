@@ -12,7 +12,6 @@ export function SegmentedControl<T extends SegmentedValue>({
   value,
   onChange,
   size = 'md',
-  orientation = 'horizontal',
   className,
 }: SegmentedControlProps<T>) {
   return (
@@ -20,7 +19,7 @@ export function SegmentedControl<T extends SegmentedValue>({
       role={label || labelledBy ? 'group' : undefined}
       aria-label={labelledBy ? undefined : label}
       aria-labelledby={labelledBy}
-      className={cx(styles.group, styles[size], styles[orientation], className)}
+      className={cx(styles.group, styles[size], className)}
     >
       {options.map((option) => (
         <button

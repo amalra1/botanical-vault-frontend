@@ -10,11 +10,19 @@ import {
 } from '@/constants/plantFilters';
 import { copy } from '@/data/copy';
 import { useDebouncedCommit } from '@/hooks/useDebouncedCommit';
+import { useIsApplePlatform } from '@/hooks/useIsApplePlatform';
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut';
 import type { PlantSearchBarProps } from '@/types/components/plantFilters';
 import styles from './PlantSearchBar.module.css';
 
 const SEARCH_COPY = copy.plants.search;
+
+function shortcutLabel(isApple: boolean | null) {
+  if (isApple === null) {
+    return null;
+  }
+  return isApple ? SEARCH_COPY.shortcutApple : SEARCH_COPY.shortcutOther;
+}
 
 export function PlantSearchBar({ query, onCommit }: PlantSearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -25,6 +33,7 @@ export function PlantSearchBar({ query, onCommit }: PlantSearchBarProps) {
   );
   const focusSearch = useCallback(() => inputRef.current?.focus(), []);
   useKeyboardShortcut(SEARCH_SHORTCUT_KEY, focusSearch);
+  const shortcut = shortcutLabel(useIsApplePlatform());
 
   const clear = () => {
     setDraft('');
@@ -49,7 +58,7 @@ export function PlantSearchBar({ query, onCommit }: PlantSearchBarProps) {
         {draft ? (
           <IconButton icon="close" label={SEARCH_COPY.clear} onClick={clear} />
         ) : (
-          <kbd className={styles.shortcut}>{SEARCH_COPY.shortcut}</kbd>
+          shortcut && <kbd className={styles.shortcut}>{shortcut}</kbd>
         )}
       </span>
     </div>

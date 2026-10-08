@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { IconButton } from '@/components/ui/IconButton/IconButton';
-import { SegmentedControl } from '@/components/ui/SegmentedControl/SegmentedControl';
+import { Viewfinder } from '@/components/ui/Viewfinder/Viewfinder';
 import { DRAFT_IMAGE_SIZES } from '@/constants/plantForm';
 import { copy } from '@/data/copy';
 import { cx } from '@/lib/classNames';
@@ -73,13 +73,12 @@ export function DraftImageCard({
       <span className={styles.filename} title={file}>
         {file}
       </span>
-      <SegmentedControl
+      <Viewfinder
         label={formatCopy(IMAGES_COPY.viewGroup, { file })}
         options={viewOptions}
         value={image.viewId}
         onChange={(viewId) => onViewChange(image.id, viewId)}
-        size="sm"
-        orientation="vertical"
+        layout="stacked"
       />
     </li>
   );

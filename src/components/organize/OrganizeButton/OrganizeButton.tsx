@@ -11,8 +11,8 @@ export function OrganizeButton() {
   return (
     <>
       <IconButton
-        icon="user"
-        label={copy.header.organize}
+        icon="settings"
+        label={copy.header.settings}
         onClick={() => setIsOpen(true)}
       />
       {isOpen && <OrganizeModal onClose={() => setIsOpen(false)} />}

@@ -73,12 +73,15 @@ export function toApiParams(filters: PlantFilters): PlantSearchApiParams {
   };
 }
 
+export function countActiveFilters(filters: PlantFilters) {
+  return [
+    filters.typeId,
+    filters.origin,
+    filters.sizeId,
+    filters.viewId,
+  ].filter((value) => value !== null).length;
+}
+
 export function hasActiveFilters(filters: PlantFilters) {
-  return (
-    filters.query !== '' ||
-    filters.typeId !== null ||
-    filters.origin !== null ||
-    filters.sizeId !== null ||
-    filters.viewId !== null
-  );
+  return filters.query !== '' || countActiveFilters(filters) > 0;
 }

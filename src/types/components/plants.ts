@@ -73,6 +73,13 @@ export interface PlantSizePickerProps {
   sizes: SizeItem[];
 }
 
+export interface SizeStepsProps {
+  sizes: SizeItem[];
+  value: number | null;
+  onChange: (sizeId: number | null) => void;
+  allLabel?: string;
+}
+
 export interface PlantFormFooterProps {
   canSave: boolean;
   isSaving: boolean;

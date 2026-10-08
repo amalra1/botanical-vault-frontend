@@ -1,0 +1,100 @@
+.viewfinder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3xs);
+  width: fit-content;
+  max-width: 100%;
+  min-height: var(--control-lg);
+  padding: var(--space-2xs) var(--space-xs) var(--space-2xs) var(--space-md);
+  border-radius: var(--radius);
+  background: var(--color-forest);
+}
+
+.lens {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  margin-right: var(--space-xs);
+  color: var(--color-mint);
+}
+
+.option {
+  position: relative;
+  min-height: calc(var(--control-lg) - 2 * var(--space-2xs));
+  padding: 0 var(--space-md);
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-on-forest-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+
+.option::before,
+.option::after {
+  position: absolute;
+  width: var(--viewfinder-corner);
+  height: var(--viewfinder-corner);
+  border: 0 solid var(--color-mint);
+  opacity: 0;
+  transform: scale(var(--viewfinder-corner-from));
+  transition:
+    opacity var(--duration-fast) ease,
+    transform var(--duration-base) var(--ease-spring);
+  content: '';
+}
+
+.option::before {
+  top: 0;
+  left: 0;
+  border-top-width: var(--viewfinder-corner-width);
+  border-left-width: var(--viewfinder-corner-width);
+  transform-origin: top left;
+}
+
+.option::after {
+  right: 0;
+  bottom: 0;
+  border-right-width: var(--viewfinder-corner-width);
+  border-bottom-width: var(--viewfinder-corner-width);
+  transform-origin: bottom right;
+}
+
+.option:hover {
+  background: var(--color-on-forest-hover);
+  color: var(--color-white);
+}
+
+.option[aria-pressed='true'] {
+  color: var(--color-white);
+  font-weight: var(--weight-semibold);
+}
+
+.option[aria-pressed='true']::before,
+.option[aria-pressed='true']::after {
+  opacity: 1;
+  transform: none;
+}
+
+.stacked {
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-height: 0;
+  padding: var(--space-2xs);
+}
+
+.stacked .lens {
+  display: none;
+}
+
+.stacked .option {
+  min-height: var(--control-sm);
+}
