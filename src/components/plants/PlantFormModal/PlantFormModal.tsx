@@ -3,12 +3,14 @@
 import { useId } from 'react';
 import { PlantForm } from '@/components/plants/PlantForm/PlantForm';
 import { IconButton } from '@/components/ui/IconButton/IconButton';
+import { LoadStatus } from '@/components/ui/LoadStatus/LoadStatus';
 import { Modal } from '@/components/ui/Modal/Modal';
 import { copy } from '@/data/copy';
 import { useTaxonomies } from '@/hooks/useTaxonomies';
 import type { PlantFormModalProps } from '@/types/components/plants';
-import { TaxonomiesStatus } from './TaxonomiesStatus';
 import styles from './PlantFormModal.module.css';
+
+const FORM_COPY = copy.plantForm;
 
 export function PlantFormModal({ onClose }: PlantFormModalProps) {
   const titleId = useId();
@@ -25,7 +27,13 @@ export function PlantFormModal({ onClose }: PlantFormModalProps) {
       {data ? (
         <PlantForm taxonomies={data} onClose={onClose} />
       ) : (
-        <TaxonomiesStatus isLoading={isLoading} onRetry={reload} />
+        <LoadStatus
+          isLoading={isLoading}
+          loadingLabel={FORM_COPY.loading}
+          errorLabel={FORM_COPY.errors.loadTaxonomies}
+          retryLabel={FORM_COPY.retry}
+          onRetry={reload}
+        />
       )}
     </Modal>
   );

@@ -1,0 +1,5 @@
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--filter-tile-min), 1fr));
+  gap: var(--space-xs);
+}

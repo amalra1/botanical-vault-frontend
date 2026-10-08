@@ -1,6 +1,10 @@
-import { PagePlaceholder } from '@/components/ui/PagePlaceholder/PagePlaceholder';
-import { copy } from '@/data/copy';
+import { Suspense } from 'react';
+import { PlantsPage } from '@/components/plants/PlantsPage/PlantsPage';
 
-export default function PlantsPage() {
-  return <PagePlaceholder {...copy.pages.plants} />;
+export default function PlantsHome() {
+  return (
+    <Suspense>
+      <PlantsPage />
+    </Suspense>
+  );
 }

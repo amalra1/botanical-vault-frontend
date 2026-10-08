@@ -1,0 +1,11 @@
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.count {
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+}

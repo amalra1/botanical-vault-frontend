@@ -41,21 +41,24 @@ export interface ModalProps {
   children: ReactNode;
 }
 
-export interface SegmentedOption {
-  value: number;
+export type SegmentedValue = number | string;
+
+export interface SegmentedOption<T extends SegmentedValue> {
+  value: T;
   label: string;
+  count?: number;
 }
 
 export type SegmentedControlSize = 'sm' | 'md';
 
 export type SegmentedControlOrientation = 'horizontal' | 'vertical';
 
-export interface SegmentedControlProps {
+export interface SegmentedControlProps<T extends SegmentedValue> {
   label?: string;
   labelledBy?: string;
-  options: SegmentedOption[];
-  value: number | null;
-  onChange: (value: number) => void;
+  options: SegmentedOption<T>[];
+  value: T | null;
+  onChange: (value: T) => void;
   size?: SegmentedControlSize;
   orientation?: SegmentedControlOrientation;
   className?: string;
@@ -74,6 +77,14 @@ export interface ChoiceTileProps extends ComponentPropsWithRef<'button'> {
 export interface TextAreaFieldProps extends ComponentPropsWithRef<'textarea'> {
   label: string;
   optionalLabel?: string;
+}
+
+export interface LoadStatusProps {
+  isLoading: boolean;
+  loadingLabel: string;
+  errorLabel: string;
+  retryLabel: string;
+  onRetry: () => void;
 }
 
 export interface FileDropButtonProps {

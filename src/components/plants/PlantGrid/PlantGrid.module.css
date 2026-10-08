@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--plant-card-min), 1fr));
+  gap: var(--space-xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: opacity var(--duration-base) ease;
+}
+
+.updating {
+  opacity: var(--opacity-updating);
+}
+
+.skeleton {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius);
+  background: var(--color-skeleton);
+  animation: pulse var(--duration-pulse) ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  to {
+    opacity: var(--opacity-updating);
+  }
+}

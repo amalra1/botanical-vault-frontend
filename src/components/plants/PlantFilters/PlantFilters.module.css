@@ -1,0 +1,14 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--filter-group-min), max-content)
+  );
+  gap: var(--space-xl) var(--space-3xl);
+}

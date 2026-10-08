@@ -1,8 +1,11 @@
 import { cx } from '@/lib/classNames';
-import type { SegmentedControlProps } from '@/types/components/ui';
+import type {
+  SegmentedControlProps,
+  SegmentedValue,
+} from '@/types/components/ui';
 import styles from './SegmentedControl.module.css';
 
-export function SegmentedControl({
+export function SegmentedControl<T extends SegmentedValue>({
   label,
   labelledBy,
   options,
@@ -11,7 +14,7 @@ export function SegmentedControl({
   size = 'md',
   orientation = 'horizontal',
   className,
-}: SegmentedControlProps) {
+}: SegmentedControlProps<T>) {
   return (
     <div
       role={label || labelledBy ? 'group' : undefined}
@@ -28,6 +31,9 @@ export function SegmentedControl({
           onClick={() => onChange(option.value)}
         >
           {option.label}
+          {option.count !== undefined && (
+            <span className={styles.count}>{option.count}</span>
+          )}
         </button>
       ))}
     </div>

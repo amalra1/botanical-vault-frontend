@@ -13,6 +13,58 @@
       "description": "Grupos de plantas por projeto."
     }
   },
+  "plants": {
+    "search": {
+      "label": "Buscar plantas",
+      "placeholder": "Buscar por nome popular ou científico",
+      "clear": "Limpar busca",
+      "shortcut": "⌘ K"
+    },
+    "filters": {
+      "label": "Filtros",
+      "type": "Tipo",
+      "origin": "Origem",
+      "size": "Porte",
+      "view": "Vista da imagem",
+      "all": "Todas",
+      "unclassified": "Sem classificação",
+      "optionCount": {
+        "one": "1 planta",
+        "many": "{count} plantas"
+      }
+    },
+    "results": {
+      "allTitle": "Todas as plantas",
+      "searchTitle": "Resultados para “{query}”",
+      "titleSeparator": " · ",
+      "count": {
+        "one": "1 planta",
+        "many": "{count} plantas"
+      },
+      "clearFilters": "Limpar filtros",
+      "sortLabel": "Ordenar por",
+      "sortName": "Nome (A–Z)",
+      "sortRecent": "Recentes"
+    },
+    "card": {
+      "images": {
+        "one": "1 imagem",
+        "many": "{count} imagens"
+      },
+      "noCover": "Sem imagem"
+    },
+    "empty": {
+      "noResultsTitle": "Nenhuma planta encontrada.",
+      "noResultsDescription": "Tente outra combinação de filtros.",
+      "libraryTitle": "O cofre ainda está vazio",
+      "libraryDescription": "Cadastre a primeira planta para começar a sua biblioteca."
+    },
+    "loading": "Carregando as plantas…",
+    "retry": "Tentar de novo",
+    "errors": {
+      "load": "Não foi possível carregar as plantas. Tente novamente."
+    }
+  },
   "login": {
     "title": "Cofre de Plantas",
     "subtitle": "Entre para abrir o seu cofre.",

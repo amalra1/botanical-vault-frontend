@@ -1,7 +1,13 @@
 import { api } from '@/lib/api';
 import { API_PATHS } from '@/constants/apiPaths';
 import { JSON_MIME_TYPE, PLANT_UPLOAD_PARTS } from '@/constants/upload';
-import type { Plant, PlantCreatePayload } from '@/types/plant';
+import { toApiParams } from '@/lib/plantFilterParams';
+import type {
+  Plant,
+  PlantCreatePayload,
+  PlantFilters,
+  PlantSearchResult,
+} from '@/types/plant';
 
 function toFormData({ images, ...plant }: PlantCreatePayload) {
   const metadata = {
@@ -20,6 +26,12 @@ function toFormData({ images, ...plant }: PlantCreatePayload) {
 }
 
 export const plantService = {
+  search: async (filters: PlantFilters): Promise<PlantSearchResult> => {
+    const { data } = await api.get<PlantSearchResult>(API_PATHS.plants, {
+      params: toApiParams(filters),
+    });
+    return data;
+  },
   create: async (payload: PlantCreatePayload): Promise<Plant> => {
     const { data } = await api.post<Plant>(
       API_PATHS.plants,

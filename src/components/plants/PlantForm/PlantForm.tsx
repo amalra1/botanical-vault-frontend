@@ -11,6 +11,7 @@ import { copy } from '@/data/copy';
 import { useDraftImages } from '@/hooks/useDraftImages';
 import { useSnackbar } from '@/hooks/useSnackbar';
 import { formatCopy } from '@/lib/formatCopy';
+import { notifyPlantsChanged } from '@/lib/plantChanges';
 import { splitPngFiles } from '@/lib/pngFiles';
 import { plantFormSchema } from '@/schemas/plantFormSchema';
 import { plantService } from '@/services/plantService';
@@ -65,6 +66,7 @@ export function PlantForm({ taxonomies, onClose }: PlantFormProps) {
     try {
       const images = draft.images.map(({ file, viewId }) => ({ file, viewId }));
       await plantService.create({ ...values, images });
+      notifyPlantsChanged();
       notify({
         title: CREATED_COPY.title,
         description: formatCopy(CREATED_COPY.description, {
