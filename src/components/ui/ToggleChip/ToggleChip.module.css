@@ -20,8 +20,9 @@
 }
 
 .chip[aria-pressed='true'] {
-  background: var(--color-mint);
+  background: var(--color-mint-soft);
   color: var(--color-forest);
+  box-shadow: inset 0 0 0 var(--border-dashed-width) var(--color-forest);
 }
 
 .dot {
@@ -38,7 +39,7 @@
 .chip[aria-pressed='true'] .dot {
   background: var(--color-forest);
   box-shadow: none;
-  color: var(--color-mint);
+  color: var(--color-white);
 }
 
 .check {

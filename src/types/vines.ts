@@ -1,4 +1,5 @@
-export type VinePosition = 'topRight' | 'bottomLeft' | 'topLeft';
+export type VinePosition =
+  'topRight' | 'bottomLeft' | 'topLeft' | 'headerLeft' | 'headerRight';
 
 export interface VineLeaf {
   x: number;

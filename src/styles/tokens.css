@@ -140,6 +140,9 @@
   --vine-top-right-size: 280px;
   --vine-bottom-left-size: 300px;
   --vine-top-left-size: 170px;
+  --vine-header-width: 240px;
+  --vine-header-viewport-share: 40vw;
+  --vine-header-lift: 26px;
   --vine-stem-width: 2.5;
   --gutter: var(--space-xl);
 

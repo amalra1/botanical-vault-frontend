@@ -1,0 +1,20 @@
+.vines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.vine {
+  position: absolute;
+  top: calc(-1 * var(--vine-header-lift));
+  width: min(var(--vine-header-width), var(--vine-header-viewport-share));
+}
+
+.headerLeft {
+  left: 0;
+}
+
+.headerRight {
+  right: 0;
+  transform: scaleX(-1);
+}

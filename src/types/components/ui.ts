@@ -1,6 +1,7 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 import type { ICON_PATHS } from '@/constants/icons';
 import type { SnackbarMessage } from '@/types/snackbar';
+import type { Vine } from '@/types/vines';
 
 export interface PagePlaceholderProps {
   title: string;
@@ -108,4 +109,9 @@ export interface SnackbarProviderProps {
 export interface SnackbarProps {
   message: SnackbarMessage;
   onDismiss: (id: number) => void;
+}
+
+export interface VineArtProps {
+  vine: Vine;
+  className?: string;
 }

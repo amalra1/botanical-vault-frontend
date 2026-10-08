@@ -6,7 +6,6 @@
 
 .vine {
   position: absolute;
-  overflow: visible;
 }
 
 .topRight {
@@ -25,51 +24,4 @@
   top: calc(var(--vine-top-left-size) * -0.36);
   left: calc(var(--vine-top-left-size) * -0.64);
   width: var(--vine-top-left-size);
-}
-
-.stem {
-  fill: none;
-  stroke: var(--color-leaf-dark);
-  stroke-width: var(--vine-stem-width);
-  stroke-linecap: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 0;
-  animation: grow var(--duration-vine) var(--ease-out) backwards;
-}
-
-.leaf {
-  transform-box: fill-box;
-  transform-origin: left center;
-  animation: sprout var(--duration-slow) var(--ease-out) backwards;
-}
-
-.dark {
-  fill: var(--color-leaf-dark);
-}
-
-.base {
-  fill: var(--color-leaf);
-}
-
-.light {
-  fill: var(--color-leaf-light);
-}
-
-@keyframes grow {
-  from {
-    stroke-dashoffset: 1;
-  }
-}
-
-@keyframes sprout {
-  from {
-    transform: scale(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .stem,
-  .leaf {
-    animation: none;
-  }
 }
