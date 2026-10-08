@@ -13,9 +13,11 @@ export function ConfirmDialog({
   confirmingLabel,
   cancelLabel,
   isConfirming,
+  isConfirmDisabled = false,
   error,
   onConfirm,
   onCancel,
+  children,
 }: ConfirmDialogProps) {
   const titleId = useId();
   const descriptionId = useId();
@@ -34,6 +36,7 @@ export function ConfirmDialog({
       <p id={descriptionId} className={styles.description}>
         {description}
       </p>
+      {children}
       {error && (
         <p role="alert" className={styles.error}>
           {error}
@@ -43,7 +46,12 @@ export function ConfirmDialog({
         <Button variant="secondary" onClick={onCancel}>
           {cancelLabel}
         </Button>
-        <Button variant="danger" isLoading={isConfirming} onClick={onConfirm}>
+        <Button
+          variant="danger"
+          isLoading={isConfirming}
+          disabled={isConfirmDisabled}
+          onClick={onConfirm}
+        >
           {isConfirming ? confirmingLabel : confirmLabel}
         </Button>
       </div>

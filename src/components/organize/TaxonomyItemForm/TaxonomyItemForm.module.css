@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.name {
+  flex: 2 1 var(--organize-name-min);
+  min-width: 0;
+}
+
+.description {
+  flex: 1 1 var(--organize-description-min);
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-xs);
+}

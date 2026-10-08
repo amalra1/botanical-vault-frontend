@@ -1,0 +1,40 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: var(--control-xl);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius);
+  background: var(--color-surface-subtle);
+  color: var(--color-text-strong);
+  font-size: var(--text-md);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.option:has(:checked) {
+  background: var(--color-mint-soft);
+}
+
+.radio {
+  flex: 0 0 auto;
+  width: var(--icon-md);
+  height: var(--icon-md);
+  margin: 0;
+  accent-color: var(--color-forest);
+}
+
+.detail {
+  margin-left: var(--space-xs);
+  color: var(--color-text-subtle);
+  font-size: var(--text-sm);
+}

@@ -6,4 +6,6 @@ export const API_ERROR_CODES = {
   duplicateImage: 'DUPLICATE_IMAGE',
   resourceNotFound: 'RESOURCE_NOT_FOUND',
   favoritesLocked: 'FAVORITES_LOCKED',
+  reassignmentRequired: 'REASSIGNMENT_REQUIRED',
+  lastTaxonomyItem: 'LAST_TAXONOMY_ITEM',
 } as const;

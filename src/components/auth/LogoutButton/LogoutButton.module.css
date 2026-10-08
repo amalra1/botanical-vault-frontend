@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  min-height: var(--control-xl);
+  padding: var(--space-xs) var(--space-md);
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-danger);
+  font-size: var(--text-lg);
+  text-align: left;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.button:hover {
+  background: var(--color-surface);
+}

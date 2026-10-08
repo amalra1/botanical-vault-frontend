@@ -1,0 +1,70 @@
+.aside {
+  display: flex;
+  flex: 1 1 var(--organize-nav-min);
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: var(--organize-nav-max);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  padding: var(--space-xs);
+  border-radius: var(--radius);
+  background: var(--color-surface-subtle);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: var(--control-xl);
+  padding: var(--space-xs) var(--space-sm);
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-text-strong);
+  text-align: left;
+  transition:
+    background-color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
+}
+
+.item:hover {
+  background: var(--color-surface);
+}
+
+.active {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-control);
+}
+
+.icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: var(--organize-nav-icon);
+  height: var(--organize-nav-icon);
+  border-radius: var(--radius);
+  background: var(--color-forest);
+  color: var(--color-mint);
+}
+
+.label {
+  flex: 1;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+}
+
+.active .label {
+  color: var(--color-forest);
+  font-weight: var(--weight-semibold);
+}
+
+.count {
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}

@@ -1,0 +1,13 @@
+dialog.dialog {
+  width: min(
+    var(--organize-modal-max),
+    calc(100vw - 2 * var(--modal-viewport-gap))
+  );
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-2xl);
+}

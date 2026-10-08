@@ -54,9 +54,11 @@ export interface ConfirmDialogProps {
   confirmingLabel: string;
   cancelLabel: string;
   isConfirming: boolean;
+  isConfirmDisabled?: boolean;
   error: string | null;
   onConfirm: () => void;
   onCancel: () => void;
+  children?: ReactNode;
 }
 
 export type SegmentedValue = number | string;

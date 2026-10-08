@@ -129,6 +129,14 @@
   --header-height: 64px;
   --modal-max: 900px;
   --confirm-max: 440px;
+  --organize-modal-max: 1040px;
+  --organize-nav-min: 220px;
+  --organize-nav-max: 300px;
+  --organize-nav-icon: 32px;
+  --organize-section-min: 420px;
+  --organize-row-min: 64px;
+  --organize-name-min: 200px;
+  --organize-description-min: 140px;
   --plant-image-min: 200px;
   --modal-viewport-gap: var(--space-xl);
   --dropzone-min-height: 360px;

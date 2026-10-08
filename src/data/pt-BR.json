@@ -76,13 +76,124 @@
     }
   },
   "header": {
-    "logout": "Sair",
-    "newPlant": "Nova planta"
+    "newPlant": "Nova planta",
+    "organize": "Organizar"
   },
   "nav": {
     "label": "Principal",
     "plants": "Plantas",
     "collections": "Coleções"
+  },
+  "organize": {
+    "title": "Organizar",
+    "sectionsLabel": "Seções",
+    "logout": "Sair da conta",
+    "loading": "Carregando as listas…",
+    "retry": "Tentar de novo",
+    "hint": "Arraste para mudar a ordem. É a mesma ordem dos filtros e do cadastro.",
+    "form": {
+      "nameLabel": "Nome",
+      "descriptionLabel": "Descrição",
+      "descriptionPlaceholder": "Ex.: muito alta",
+      "add": "Adicionar",
+      "adding": "Adicionando…",
+      "save": "Salvar",
+      "saving": "Salvando…",
+      "cancel": "Cancelar"
+    },
+    "item": {
+      "rename": "Renomear {name}",
+      "delete": "Excluir {name}",
+      "reorder": "Reordenar {name}",
+      "dragInstructions": "Para reordenar, pressione espaço, use as setas para mover e espaço de novo para soltar. Esc cancela.",
+      "dragStart": "Movendo {name}, na posição {position} de {total}.",
+      "dragOver": "{name} sobre a posição {position} de {total}.",
+      "dragEnd": "{name} ficou na posição {position} de {total}.",
+      "dragCancel": "Reordenação cancelada. {name} voltou para o lugar."
+    },
+    "sections": {
+      "origins": {
+        "title": "Origens",
+        "description": "Aparecem como filtro na tela de plantas e como opção no cadastro.",
+        "add": "Adicionar origem",
+        "placeholder": "Ex.: Cerrado",
+        "usage": {
+          "none": "Sem uso",
+          "one": "1 planta",
+          "many": "{count} plantas"
+        },
+        "inUse": {
+          "one": "1 planta usa esta origem. O que fazer com ela?",
+          "many": "{count} plantas usam esta origem. O que fazer com elas?"
+        },
+        "unused": "Nenhuma planta usa esta origem."
+      },
+      "plantTypes": {
+        "title": "Tipos",
+        "description": "Forração, arbusto, árvore… cada tipo vira uma opção nos filtros.",
+        "add": "Adicionar tipo",
+        "placeholder": "Ex.: Trepadeira",
+        "usage": {
+          "none": "Sem uso",
+          "one": "1 planta",
+          "many": "{count} plantas"
+        },
+        "inUse": {
+          "one": "1 planta usa este tipo. Para onde ela vai?",
+          "many": "{count} plantas usam este tipo. Para onde elas vão?"
+        },
+        "unused": "Nenhuma planta usa este tipo."
+      },
+      "sizes": {
+        "title": "Portes",
+        "description": "Usados na escadinha. Coloque do mais baixo para o mais alto.",
+        "add": "Adicionar porte",
+        "placeholder": "Ex.: Gigante",
+        "usage": {
+          "none": "Sem uso",
+          "one": "1 planta",
+          "many": "{count} plantas"
+        },
+        "inUse": {
+          "one": "1 planta usa este porte. Para onde ela vai?",
+          "many": "{count} plantas usam este porte. Para onde elas vão?"
+        },
+        "unused": "Nenhuma planta usa este porte."
+      },
+      "imageViews": {
+        "title": "Vistas",
+        "description": "Cada imagem de planta é marcada com uma vista.",
+        "add": "Adicionar vista",
+        "placeholder": "Ex.: Detalhe da flor",
+        "usage": {
+          "none": "Sem uso",
+          "one": "1 imagem",
+          "many": "{count} imagens"
+        },
+        "inUse": {
+          "one": "1 imagem usa esta vista. Para onde ela vai?",
+          "many": "{count} imagens usam esta vista. Para onde elas vão?"
+        },
+        "unused": "Nenhuma imagem usa esta vista."
+      }
+    },
+    "deleteDialog": {
+      "title": "Excluir “{name}”?",
+      "destination": "Destino",
+      "moveTo": "Mover para {name}",
+      "unassign": "Deixar sem classificação",
+      "cancel": "Cancelar",
+      "confirm": "Excluir",
+      "deleting": "Excluindo…",
+      "error": "Não foi possível excluir. Tente novamente."
+    },
+    "errors": {
+      "nameRequired": "Informe o nome.",
+      "nameTooLong": "Use até {max} caracteres.",
+      "duplicateName": "Já existe um item com esse nome.",
+      "save": "Não foi possível salvar. Tente novamente.",
+      "load": "Não foi possível carregar as listas. Tente novamente."
+    }
   },
   "favorite": {
     "toggle": "Favoritar {name}"
@@ -288,6 +399,14 @@
     "membershipError": {
       "title": "Não deu para atualizar a coleção",
       "description": "Tente novamente em instantes."
+    },
+    "taxonomyDeleted": {
+      "title": "Item excluído",
+      "description": "{name} saiu da lista."
+    },
+    "reorderError": {
+      "title": "Não deu para mudar a ordem",
+      "description": "A lista voltou como estava. Tente novamente."
     }
   }
 }
