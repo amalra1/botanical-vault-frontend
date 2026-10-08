@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { SnackbarViewport } from '@/components/ui/SnackbarViewport/SnackbarViewport';
+import { SnackbarProvider } from '@/contexts/SnackbarContext';
 import { copy } from '@/data/copy';
 import { cx } from '@/lib/classNames';
 import { fontVariables } from './fonts';
@@ -16,7 +18,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="pt-BR" className={cx(...fontVariables)}>
-      <body>{children}</body>
+      <body>
+        <SnackbarProvider>
+          {children}
+          <SnackbarViewport />
+        </SnackbarProvider>
+      </body>
     </html>
   );
 }

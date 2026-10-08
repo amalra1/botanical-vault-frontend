@@ -10,7 +10,7 @@
   box-shadow: var(--shadow-modal);
   overflow-y: auto;
   overscroll-behavior: contain;
-  animation: enter var(--duration-base) var(--ease-out) both;
+  animation: enter var(--duration-base) var(--ease-out) backwards;
 }
 
 .dialog::backdrop {

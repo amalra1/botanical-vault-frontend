@@ -79,6 +79,7 @@ export function DraftImageCard({
         value={image.viewId}
         onChange={(viewId) => onViewChange(image.id, viewId)}
         size="sm"
+        orientation="vertical"
       />
     </li>
   );

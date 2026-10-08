@@ -9,6 +9,7 @@ import { PlantFormFields } from '@/components/plants/PlantFormFields/PlantFormFi
 import { PlantFormFooter } from '@/components/plants/PlantFormFooter/PlantFormFooter';
 import { copy } from '@/data/copy';
 import { useDraftImages } from '@/hooks/useDraftImages';
+import { useSnackbar } from '@/hooks/useSnackbar';
 import { formatCopy } from '@/lib/formatCopy';
 import { splitPngFiles } from '@/lib/pngFiles';
 import { plantFormSchema } from '@/schemas/plantFormSchema';
@@ -25,6 +26,7 @@ const EMPTY_PLANT = {
   notes: '',
 };
 const FILE_LIST_SEPARATOR = ', ';
+const CREATED_COPY = copy.snackbar.plantCreated;
 
 function rejectedFilesMessage(rejected: File[]) {
   if (rejected.length === 0) {
@@ -34,12 +36,9 @@ function rejectedFilesMessage(rejected: File[]) {
   return formatCopy(copy.plantForm.errors.onlyPng, { files });
 }
 
-export function PlantForm({
-  taxonomies,
-  onClose,
-  onOriginCreated,
-}: PlantFormProps) {
+export function PlantForm({ taxonomies, onClose }: PlantFormProps) {
   const draft = useDraftImages();
+  const { notify } = useSnackbar();
   const [fileError, setFileError] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const {
@@ -66,6 +65,12 @@ export function PlantForm({
     try {
       const images = draft.images.map(({ file, viewId }) => ({ file, viewId }));
       await plantService.create({ ...values, images });
+      notify({
+        title: CREATED_COPY.title,
+        description: formatCopy(CREATED_COPY.description, {
+          name: values.commonName,
+        }),
+      });
       onClose();
     } catch (error) {
       setSubmitError(plantSaveErrorMessage(error));
@@ -95,7 +100,6 @@ export function PlantForm({
         control={control}
         taxonomies={taxonomies}
         firstFilename={draft.images[0].file.name}
-        onOriginCreated={onOriginCreated}
       />
       <PlantFormFooter
         canSave={isValid}

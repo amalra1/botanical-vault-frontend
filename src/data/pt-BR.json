@@ -65,11 +65,6 @@
       "scientificNamePlaceholder": "Ex.: Butia eriospatha",
       "origin": "Origem",
       "originHint": "Pode marcar mais de uma. Sem nada marcado, fica como “sem classificação”.",
-      "newOrigin": "Nova origem",
-      "newOriginName": "Nome da nova origem",
-      "newOriginPlaceholder": "Ex.: Exótica",
-      "addOrigin": "Adicionar",
-      "cancelOrigin": "Cancelar",
       "type": "Tipo",
       "size": "Porte",
       "notes": "Notas",
@@ -90,11 +85,16 @@
       "onlyPng": "Só aceitamos PNG. Ficou de fora: {files}.",
       "invalidImage": "Uma das imagens não é um PNG válido.",
       "fileTooLarge": "As imagens passam do limite de envio.",
-      "originNameRequired": "Informe o nome da origem.",
-      "duplicateOrigin": "Essa origem já existe.",
-      "originUnexpected": "Não foi possível criar a origem. Tente novamente.",
       "loadTaxonomies": "Não foi possível carregar as listas. Tente novamente.",
       "unexpected": "Não foi possível salvar a planta. Tente novamente."
+    }
+  },
+  "snackbar": {
+    "dismiss": "Fechar aviso",
+    "announcement": "{title}. {description}",
+    "plantCreated": {
+      "title": "Plantada no cofre",
+      "description": "{name} já está na sua biblioteca."
     }
   }
 }

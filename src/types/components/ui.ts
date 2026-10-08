@@ -1,5 +1,6 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 import type { ICON_PATHS } from '@/constants/icons';
+import type { SnackbarMessage } from '@/types/snackbar';
 
 export interface PagePlaceholderProps {
   title: string;
@@ -47,6 +48,8 @@ export interface SegmentedOption {
 
 export type SegmentedControlSize = 'sm' | 'md';
 
+export type SegmentedControlOrientation = 'horizontal' | 'vertical';
+
 export interface SegmentedControlProps {
   label?: string;
   labelledBy?: string;
@@ -54,11 +57,18 @@ export interface SegmentedControlProps {
   value: number | null;
   onChange: (value: number) => void;
   size?: SegmentedControlSize;
+  orientation?: SegmentedControlOrientation;
   className?: string;
 }
 
 export interface ToggleChipProps extends ComponentPropsWithRef<'button'> {
   pressed: boolean;
+}
+
+export interface ChoiceTileProps extends ComponentPropsWithRef<'button'> {
+  pressed: boolean;
+  label: string;
+  caption?: string;
 }
 
 export interface TextAreaFieldProps extends ComponentPropsWithRef<'textarea'> {
@@ -78,4 +88,13 @@ export interface FieldGroupProps {
   hint?: string;
   children: ReactNode;
   className?: string;
+}
+
+export interface SnackbarProviderProps {
+  children: ReactNode;
+}
+
+export interface SnackbarProps {
+  message: SnackbarMessage;
+  onDismiss: (id: number) => void;
 }

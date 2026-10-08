@@ -21,6 +21,8 @@
   --color-dropzone-bg: #f8fbf9;
   --color-dropzone-hover: #f1faf4;
   --color-footer-glass: rgba(255, 255, 255, 0.92);
+  --color-on-forest-muted: rgba(255, 255, 255, 0.72);
+  --color-on-forest-hover: rgba(255, 255, 255, 0.12);
 
   --color-text: var(--color-forest);
   --color-text-strong: #0b1f14;
@@ -110,17 +112,20 @@
   --icon-xl: 40px;
   --add-tile-icon: 46px;
   --drop-icon: 88px;
-  --type-disc: 68px;
+  --snackbar-icon: 36px;
 
   --content-max: 1240px;
   --header-height: 64px;
   --modal-max: 900px;
   --modal-viewport-gap: var(--space-xl);
-  --dropzone-max: 420px;
+  --dropzone-min-height: 360px;
+  --dropzone-viewport-share: 55dvh;
   --dropzone-copy-max: 280px;
   --image-tile-min: 170px;
   --field-min: 240px;
   --type-columns: 4;
+  --snackbar-max: 400px;
+  --snackbar-progress: 3px;
   --auth-card-max: 400px;
   --vine-top-right-size: 280px;
   --vine-bottom-left-size: 300px;
@@ -129,6 +134,7 @@
   --gutter: var(--space-xl);
 
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --duration-fast: 200ms;
   --duration-base: 250ms;
   --duration-slow: 300ms;
@@ -138,6 +144,9 @@
   --reveal-distance: 18px;
   --modal-enter-scale: 0.96;
   --hover-scale: 1.015;
+  --sprout-tilt: -35deg;
+
+  --z-snackbar: 3;
 
   --focus-ring-width: 3px;
   --focus-ring-offset: 3px;

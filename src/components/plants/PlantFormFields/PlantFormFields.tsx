@@ -3,9 +3,8 @@
 import { useController, useWatch } from 'react-hook-form';
 import { OriginPicker } from '@/components/plants/OriginPicker/OriginPicker';
 import { PlantNameFields } from '@/components/plants/PlantNameFields/PlantNameFields';
+import { PlantSizePicker } from '@/components/plants/PlantSizePicker/PlantSizePicker';
 import { PlantTypePicker } from '@/components/plants/PlantTypePicker/PlantTypePicker';
-import { FieldGroup } from '@/components/ui/FieldGroup/FieldGroup';
-import { SegmentedControl } from '@/components/ui/SegmentedControl/SegmentedControl';
 import { TextAreaField } from '@/components/ui/TextAreaField/TextAreaField';
 import { NOTES_ROWS } from '@/constants/plantForm';
 import { copy } from '@/data/copy';
@@ -20,10 +19,8 @@ export function PlantFormFields({
   control,
   taxonomies,
   firstFilename,
-  onOriginCreated,
 }: PlantFormFieldsProps) {
   const commonName = useWatch({ control, name: 'commonName' });
-  const { field: sizeField } = useController({ control, name: 'sizeId' });
   const { field: notesField } = useController({ control, name: 'notes' });
   const viewNames = taxonomies.imageViews.map((view) => view.name);
   const suggestion = firstFilename
@@ -32,10 +29,6 @@ export function PlantFormFields({
   const showSuggestion =
     suggestion !== '' &&
     normalizeForMatch(suggestion) !== normalizeForMatch(commonName);
-  const sizeOptions = taxonomies.sizes.map((size) => ({
-    value: size.id,
-    label: size.description ?? size.name,
-  }));
 
   return (
     <div className={styles.fields}>
@@ -46,22 +39,14 @@ export function PlantFormFields({
         />
       </div>
       <div className={styles.section}>
-        <OriginPicker
-          control={control}
-          origins={taxonomies.origins}
-          onOriginCreated={onOriginCreated}
-        />
+        <OriginPicker control={control} origins={taxonomies.origins} />
       </div>
       <div className={styles.section}>
         <PlantTypePicker control={control} items={taxonomies.plantTypes} />
       </div>
-      <FieldGroup label={FIELDS_COPY.size} className={styles.section}>
-        <SegmentedControl
-          options={sizeOptions}
-          value={sizeField.value ?? null}
-          onChange={sizeField.onChange}
-        />
-      </FieldGroup>
+      <div className={styles.section}>
+        <PlantSizePicker control={control} sizes={taxonomies.sizes} />
+      </div>
       <div className={styles.section}>
         <TextAreaField
           label={FIELDS_COPY.notes}

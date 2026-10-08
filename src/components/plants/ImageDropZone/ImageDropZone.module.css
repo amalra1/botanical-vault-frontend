@@ -14,8 +14,7 @@
   justify-content: center;
   gap: var(--space-lg);
   width: 100%;
-  max-width: var(--dropzone-max);
-  aspect-ratio: 1 / 1;
+  min-height: min(var(--dropzone-min-height), var(--dropzone-viewport-share));
   padding: var(--space-2xl);
   border: var(--border-dashed-width) dashed var(--color-dropzone-border);
   border-radius: var(--radius);

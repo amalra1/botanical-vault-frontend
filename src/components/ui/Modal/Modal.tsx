@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import type { DragEvent, MouseEvent, SyntheticEvent } from 'react';
+import { SnackbarViewport } from '@/components/ui/SnackbarViewport/SnackbarViewport';
 import { cx } from '@/lib/classNames';
 import type { ModalProps } from '@/types/components/ui';
 import styles from './Modal.module.css';
@@ -53,6 +54,7 @@ export function Modal({
       onDrop={preventFileNavigation}
     >
       <div className={styles.panel}>{children}</div>
+      <SnackbarViewport />
     </dialog>
   );
 }

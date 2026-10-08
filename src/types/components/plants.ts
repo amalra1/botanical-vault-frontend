@@ -1,6 +1,6 @@
 import type { Control } from 'react-hook-form';
 import type { DraftImage, PlantFormValues } from '@/types/plant';
-import type { Taxonomies, TaxonomyItem } from '@/types/taxonomy';
+import type { SizeItem, Taxonomies, TaxonomyItem } from '@/types/taxonomy';
 
 export interface PlantFormModalProps {
   onClose: () => void;
@@ -9,7 +9,6 @@ export interface PlantFormModalProps {
 export interface PlantFormProps {
   taxonomies: Taxonomies;
   onClose: () => void;
-  onOriginCreated: (origin: TaxonomyItem) => void;
 }
 
 export interface TaxonomiesStatusProps {
@@ -47,7 +46,6 @@ export interface PlantFormFieldsProps {
   control: Control<PlantFormValues>;
   taxonomies: Taxonomies;
   firstFilename: string | null;
-  onOriginCreated: (origin: TaxonomyItem) => void;
 }
 
 export interface PlantNameFieldsProps {
@@ -58,16 +56,16 @@ export interface PlantNameFieldsProps {
 export interface OriginPickerProps {
   control: Control<PlantFormValues>;
   origins: TaxonomyItem[];
-  onOriginCreated: (origin: TaxonomyItem) => void;
-}
-
-export interface NewOriginInputProps {
-  onCreated: (origin: TaxonomyItem) => void;
 }
 
 export interface TaxonomyPickerProps {
   control: Control<PlantFormValues>;
   items: TaxonomyItem[];
+}
+
+export interface PlantSizePickerProps {
+  control: Control<PlantFormValues>;
+  sizes: SizeItem[];
 }
 
 export interface PlantFormFooterProps {
