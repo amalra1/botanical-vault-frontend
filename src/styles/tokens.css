@@ -43,6 +43,8 @@
   --checker-size: 14px;
 
   --color-glass: rgba(255, 255, 255, 0.72);
+  --color-header-glass: rgba(214, 228, 219, 0.86);
+  --color-header-divider: rgba(1, 63, 34, 0.12);
   --glass-filter: saturate(180%) blur(20px);
   --badge-filter: blur(8px);
   --color-overlay: rgba(11, 31, 20, 0.3);
@@ -158,6 +160,8 @@
   --vine-header-width: 240px;
   --vine-header-viewport-share: 40vw;
   --vine-header-lift: 26px;
+  --vine-title-width: 260px;
+  --vine-title-gap: var(--space-xs);
   --vine-stem-width: 2.5;
   --gutter: var(--space-xl);
 

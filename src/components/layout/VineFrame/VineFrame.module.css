@@ -1,0 +1,32 @@
+.frame {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--vine-title-gap);
+  width: 100%;
+}
+
+.side {
+  display: flex;
+  container-type: inline-size;
+  min-width: 0;
+}
+
+.vine {
+  width: 100%;
+  max-width: var(--vine-title-width);
+}
+
+.titleLeft {
+  margin-left: auto;
+}
+
+.titleRight {
+  transform: scaleX(-1);
+}
+
+@container (width < 120px) {
+  .vine {
+    display: none;
+  }
+}

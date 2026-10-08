@@ -1,5 +1,6 @@
 'use client';
 
+import { VineFrame } from '@/components/layout/VineFrame/VineFrame';
 import { PlantFilters } from '@/components/plants/PlantFilters/PlantFilters';
 import { PlantModalHost } from '@/components/plants/PlantModalHost/PlantModalHost';
 import { PlantResults } from '@/components/plants/PlantResults/PlantResults';
@@ -26,7 +27,9 @@ export function PlantsPage() {
   return (
     <main className={styles.page}>
       <div className={styles.hero}>
-        <h1 className={styles.title}>{copy.pages.plants.title}</h1>
+        <VineFrame>
+          <h1 className={styles.title}>{copy.pages.plants.title}</h1>
+        </VineFrame>
         <PlantSearchBar query={filters.query} onCommit={updateQuery} />
       </div>
       {taxonomies && (
