@@ -239,6 +239,11 @@
     "saving": "Salvando…",
     "cancelRename": "Cancelar",
     "addPlants": "Adicionar plantas",
+    "download": "Baixar .zip",
+    "downloading": "Preparando…",
+    "archive": {
+      "untitled": "Sem nome"
+    },
     "delete": "Excluir coleção",
     "staircaseTitle": "Escadinha",
     "complete": "Tem todos os portes",
@@ -407,6 +412,10 @@
     "reorderError": {
       "title": "Não deu para mudar a ordem",
       "description": "A lista voltou como estava. Tente novamente."
+    },
+    "collectionDownloadError": {
+      "title": "Não deu para baixar o .zip",
+      "description": "Confira a conexão e tente novamente."
     }
   }
 }

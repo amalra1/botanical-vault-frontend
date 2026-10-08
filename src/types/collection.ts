@@ -28,6 +28,29 @@ export interface Collection {
   updatedAt: string;
 }
 
+export interface CollectionImage {
+  plantId: number;
+  commonName: string;
+  imageId: number;
+  originalFilename: string;
+  url: string;
+}
+
+export interface ArchiveEntry {
+  path: string;
+  url: string;
+}
+
+export interface ArchiveFolder {
+  name: string;
+  usedFileNames: Set<string>;
+}
+
+export interface CollectionDownload {
+  isDownloading: boolean;
+  download: () => Promise<void>;
+}
+
 export interface FavoriteChange {
   plantId: number;
   favorite: boolean;

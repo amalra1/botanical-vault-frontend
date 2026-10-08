@@ -16,11 +16,15 @@ export function copyPngToClipboard(url: string) {
   return navigator.clipboard.write([item]);
 }
 
-export async function downloadImage(url: string, filename: string) {
-  const objectUrl = URL.createObjectURL(await fetchImageBlob(url));
+export function downloadBlob(blob: Blob, filename: string) {
+  const objectUrl = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = objectUrl;
   link.download = filename;
   link.click();
   URL.revokeObjectURL(objectUrl);
+}
+
+export async function downloadImage(url: string, filename: string) {
+  downloadBlob(await fetchImageBlob(url), filename);
 }

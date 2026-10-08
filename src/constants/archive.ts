@@ -1,0 +1,9 @@
+export const ZIP_EXTENSION = '.zip';
+export const ZIP_MIME_TYPE = 'application/zip';
+export const STORE_LEVEL = 0;
+export const PATH_SEPARATOR = '/';
+export const FIRST_DUPLICATE_NUMBER = 2;
+export const FORBIDDEN_FILENAME_CHARACTERS = /[\\/:*?"<>|\p{Cc}]+/gu;
+export const LEADING_DOTS = /^\.+/;
+export const REPEATED_SPACES = /\s+/g;
+export const FILE_EXTENSION = /\.[^.]+$/;

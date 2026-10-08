@@ -9,6 +9,7 @@ export const API_PATHS = {
   order: '/order',
   plants: '/plants',
   collections: '/collections',
+  images: '/images',
 } as const;
 
 export const TAXONOMY_PATHS: Record<TaxonomyKind, string> = {

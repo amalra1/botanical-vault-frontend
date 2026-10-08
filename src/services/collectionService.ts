@@ -1,6 +1,10 @@
 import { api } from '@/lib/api';
 import { API_PATHS } from '@/constants/apiPaths';
-import type { Collection, CollectionSummary } from '@/types/collection';
+import type {
+  Collection,
+  CollectionImage,
+  CollectionSummary,
+} from '@/types/collection';
 
 function collectionPath(id: number) {
   return `${API_PATHS.collections}/${id}`;
@@ -17,6 +21,12 @@ export const collectionService = {
   },
   getById: async (id: number): Promise<Collection> => {
     const { data } = await api.get<Collection>(collectionPath(id));
+    return data;
+  },
+  getImages: async (id: number): Promise<CollectionImage[]> => {
+    const { data } = await api.get<CollectionImage[]>(
+      `${collectionPath(id)}${API_PATHS.images}`,
+    );
     return data;
   },
   create: async (name: string): Promise<Collection> => {

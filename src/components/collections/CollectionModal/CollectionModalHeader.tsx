@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/Button/Button';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { IconButton } from '@/components/ui/IconButton/IconButton';
 import { copy } from '@/data/copy';
+import { useCollectionDownload } from '@/hooks/useCollectionDownload';
 import { collectionMeta } from '@/lib/collectionMeta';
 import type { CollectionModalHeaderProps } from '@/types/components/collections';
 import { CollectionTitle } from './CollectionTitle';
@@ -16,6 +17,8 @@ export function CollectionModalHeader({
   onDelete,
   onClose,
 }: CollectionModalHeaderProps) {
+  const { isDownloading, download } = useCollectionDownload(collection);
+
   return (
     <header className={styles.header}>
       <div className={styles.identity}>
@@ -28,6 +31,15 @@ export function CollectionModalHeader({
         <Button variant="secondary" onClick={onAddPlants}>
           <Icon name="plus" />
           {MODAL_COPY.addPlants}
+        </Button>
+        <Button
+          variant="secondary"
+          isLoading={isDownloading}
+          disabled={collection.plants.length === 0}
+          onClick={download}
+        >
+          <Icon name="download" />
+          {isDownloading ? MODAL_COPY.downloading : MODAL_COPY.download}
         </Button>
         {!collection.favorites && (
           <IconButton
