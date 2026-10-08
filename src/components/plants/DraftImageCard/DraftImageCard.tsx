@@ -30,7 +30,7 @@ export function DraftImageCard({
     transition,
     isDragging,
   } = useSortable({ id: image.id });
-  const file = image.file.name;
+  const file = image.filename;
   const viewOptions = views.map((view) => ({
     value: view.id,
     label: view.name,

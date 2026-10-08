@@ -1,15 +1,24 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { arrayMove } from '@dnd-kit/sortable';
-import type { DraftImage } from '@/types/plant';
+import type { DraftImage } from '@/types/plantImage';
+
+const NO_INITIAL_IMAGES: DraftImage[] = [];
 
 function toDraftImage(file: File, viewId: number, urls: Set<string>) {
   const previewUrl = URL.createObjectURL(file);
   urls.add(previewUrl);
-  return { id: crypto.randomUUID(), file, previewUrl, viewId };
+  const draft: DraftImage = {
+    id: crypto.randomUUID(),
+    source: { kind: 'new', file },
+    previewUrl,
+    filename: file.name,
+    viewId,
+  };
+  return draft;
 }
 
-export function useDraftImages() {
-  const [images, setImages] = useState<DraftImage[]>([]);
+export function useDraftImages(initialImages = NO_INITIAL_IMAGES) {
+  const [images, setImages] = useState<DraftImage[]>(initialImages);
   const previewUrls = useRef(new Set<string>());
 
   useEffect(() => {
@@ -27,9 +36,8 @@ export function useDraftImages() {
   const remove = useCallback(
     (id: string) => {
       const target = images.find((image) => image.id === id);
-      if (target) {
+      if (target && previewUrls.current.delete(target.previewUrl)) {
         URL.revokeObjectURL(target.previewUrl);
-        previewUrls.current.delete(target.previewUrl);
       }
       setImages((current) => current.filter((image) => image.id !== id));
     },

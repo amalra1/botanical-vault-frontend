@@ -8,7 +8,7 @@ export interface PagePlaceholderProps {
   description: string;
 }
 
-export type ButtonVariant = 'primary' | 'secondary';
+export type ButtonVariant = 'primary' | 'secondary' | 'danger';
 
 export interface ButtonProps extends ComponentPropsWithRef<'button'> {
   variant?: ButtonVariant;
@@ -35,11 +35,33 @@ export interface IconButtonProps extends ComponentPropsWithRef<'button'> {
   variant?: IconButtonVariant;
 }
 
+export type ModalRole = 'dialog' | 'alertdialog';
+
 export interface ModalProps {
   labelledBy: string;
+  describedBy?: string;
+  role?: ModalRole;
   onClose: () => void;
   className?: string;
   children: ReactNode;
+}
+
+export interface ModalHeaderProps {
+  titleId: string;
+  title: string;
+  onClose: () => void;
+}
+
+export interface ConfirmDialogProps {
+  title: string;
+  description: string;
+  confirmLabel: string;
+  confirmingLabel: string;
+  cancelLabel: string;
+  isConfirming: boolean;
+  error: string | null;
+  onConfirm: () => void;
+  onCancel: () => void;
 }
 
 export type SegmentedValue = number | string;

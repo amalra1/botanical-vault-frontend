@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/Button/Button';
 import { SegmentedControl } from '@/components/ui/SegmentedControl/SegmentedControl';
 import { copy } from '@/data/copy';
 import { pluralCopy } from '@/lib/pluralCopy';
-import type { PlantResultsHeaderProps } from '@/types/components/plants';
+import type { PlantResultsHeaderProps } from '@/types/components/plantFilters';
 import type { SegmentedOption } from '@/types/components/ui';
 import type { PlantSortKey } from '@/types/plant';
 import styles from './PlantResultsHeader.module.css';

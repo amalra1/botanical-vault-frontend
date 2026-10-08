@@ -6,3 +6,5 @@ export const PLANT_UPLOAD_PARTS = {
   plant: 'plant',
   files: 'files',
 } as const;
+
+export const IMAGE_FETCH_FAILED = 'Image request failed';

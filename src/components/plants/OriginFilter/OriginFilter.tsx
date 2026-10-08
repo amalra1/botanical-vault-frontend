@@ -6,7 +6,7 @@ import { facetCount } from '@/lib/facetCount';
 import type {
   OriginFilterOption,
   OriginFilterProps,
-} from '@/types/components/plants';
+} from '@/types/components/plantFilters';
 import styles from './OriginFilter.module.css';
 
 const FILTERS_COPY = copy.plants.filters;

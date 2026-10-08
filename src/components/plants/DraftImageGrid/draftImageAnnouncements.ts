@@ -1,14 +1,14 @@
 import type { Announcements } from '@dnd-kit/core';
 import { copy } from '@/data/copy';
 import { formatCopy } from '@/lib/formatCopy';
-import type { DraftImage } from '@/types/plant';
+import type { DraftImage } from '@/types/plantImage';
 
 const IMAGES_COPY = copy.plantForm.images;
 
 export function draftImageAnnouncements(images: DraftImage[]): Announcements {
   const total = images.length;
   const filenameOf = (id: string | number) =>
-    images.find((image) => image.id === id)?.file.name ?? '';
+    images.find((image) => image.id === id)?.filename ?? '';
   const positionOf = (id: string | number | undefined) =>
     images.findIndex((image) => image.id === id) + 1;
 

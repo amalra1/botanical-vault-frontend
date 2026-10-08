@@ -1,11 +1,13 @@
 'use client';
 
 import { PlantFilters } from '@/components/plants/PlantFilters/PlantFilters';
+import { PlantModalHost } from '@/components/plants/PlantModalHost/PlantModalHost';
 import { PlantResults } from '@/components/plants/PlantResults/PlantResults';
 import { PlantResultsHeader } from '@/components/plants/PlantResultsHeader/PlantResultsHeader';
 import { PlantSearchBar } from '@/components/plants/PlantSearchBar/PlantSearchBar';
 import { copy } from '@/data/copy';
 import { usePlantFilters } from '@/hooks/usePlantFilters';
+import { usePlantModal } from '@/hooks/usePlantModal';
 import { usePlantSearch } from '@/hooks/usePlantSearch';
 import { useTaxonomies } from '@/hooks/useTaxonomies';
 import { hasActiveFilters } from '@/lib/plantFilterParams';
@@ -17,7 +19,9 @@ export function PlantsPage() {
     usePlantFilters();
   const { result, error, isUpdating, reload } = usePlantSearch(filters);
   const { data: taxonomies } = useTaxonomies();
+  const plantModal = usePlantModal();
   const isFiltered = hasActiveFilters(filters);
+  const origins = taxonomies?.origins ?? [];
 
   return (
     <main className={styles.page}>
@@ -46,10 +50,12 @@ export function PlantsPage() {
         error={error}
         isUpdating={isUpdating}
         hasActiveFilters={isFiltered}
-        origins={taxonomies?.origins ?? []}
+        origins={origins}
         onRetry={reload}
         onClear={clearFilters}
+        onOpenPlant={plantModal.openDetail}
       />
+      <PlantModalHost modal={plantModal} origins={origins} />
     </main>
   );
 }

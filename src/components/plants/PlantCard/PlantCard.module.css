@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -9,6 +10,11 @@
   transition:
     transform var(--duration-base) var(--ease-out),
     box-shadow var(--duration-base) ease;
+}
+
+.card:has(.open:focus-visible) {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
 }
 
 .card:hover {
@@ -71,6 +77,25 @@
   color: var(--color-forest);
   font-size: var(--text-xl);
   overflow-wrap: anywhere;
+}
+
+.open {
+  padding: 0;
+  border: 0;
+  background: none;
+  letter-spacing: inherit;
+  text-align: left;
+  text-transform: inherit;
+}
+
+.open::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.open:focus-visible {
+  outline: none;
 }
 
 .scientific {

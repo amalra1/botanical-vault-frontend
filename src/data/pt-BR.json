@@ -88,6 +88,7 @@
   },
   "plantForm": {
     "titleNew": "Nova planta",
+    "titleEdit": "Editar planta",
     "loading": "Carregando as listas…",
     "retry": "Tentar de novo",
     "drop": {
@@ -126,7 +127,9 @@
     "footer": {
       "cancel": "Cancelar",
       "save": "Salvar planta",
+      "saveChanges": "Salvar alterações",
       "saving": "Salvando…",
+      "delete": "Excluir planta",
       "saveDisabledHint": "Adicione imagens e preencha o nome popular, o tipo e o porte"
     },
     "errors": {
@@ -138,8 +141,46 @@
       "invalidImage": "Uma das imagens não é um PNG válido.",
       "fileTooLarge": "As imagens passam do limite de envio.",
       "loadTaxonomies": "Não foi possível carregar as listas. Tente novamente.",
+      "duplicateImage": "Uma imagem apareceu duas vezes. Feche e abra a edição de novo.",
+      "plantNotFound": "Esta planta não existe mais.",
+      "loadPlant": "Não foi possível carregar a planta. Tente novamente.",
       "unexpected": "Não foi possível salvar a planta. Tente novamente."
     }
+  },
+  "plantDetail": {
+    "title": "Planta",
+    "loading": "Carregando a planta…",
+    "retry": "Tentar de novo",
+    "edit": "Editar planta",
+    "images": {
+      "one": "1 imagem",
+      "many": "{count} imagens"
+    },
+    "viewFilter": "Filtrar por vista",
+    "allViews": "Todas",
+    "imageAlt": "{view} · {file}",
+    "dimensions": "{width} × {height}",
+    "copy": "Copiar PNG",
+    "copied": "Copiado",
+    "download": "Baixar {file}",
+    "errors": {
+      "load": "Não foi possível carregar a planta. Tente novamente.",
+      "copyTitle": "Não deu para copiar",
+      "copy": "O navegador não liberou a área de transferência. Use Baixar.",
+      "downloadTitle": "Não deu para baixar",
+      "download": "Tente novamente em instantes."
+    }
+  },
+  "deleteDialog": {
+    "title": "Excluir “{name}”?",
+    "description": {
+      "one": "A planta e a imagem dela saem do cofre e de todas as coleções. Não dá para desfazer.",
+      "many": "A planta e as {count} imagens dela saem do cofre e de todas as coleções. Não dá para desfazer."
+    },
+    "cancel": "Cancelar",
+    "confirm": "Excluir",
+    "deleting": "Excluindo…",
+    "error": "Não foi possível excluir a planta. Tente novamente."
   },
   "snackbar": {
     "dismiss": "Fechar aviso",
@@ -147,6 +188,14 @@
     "plantCreated": {
       "title": "Plantada no cofre",
       "description": "{name} já está na sua biblioteca."
+    },
+    "plantUpdated": {
+      "title": "Alterações salvas",
+      "description": "{name} foi atualizada."
+    },
+    "plantDeleted": {
+      "title": "Planta excluída",
+      "description": "{name} saiu do cofre."
     }
   }
 }

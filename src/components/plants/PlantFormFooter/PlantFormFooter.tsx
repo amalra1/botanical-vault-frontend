@@ -9,11 +9,25 @@ const FOOTER_COPY = copy.plantForm.footer;
 export function PlantFormFooter({
   canSave,
   isSaving,
+  isEditing,
   error,
   onCancel,
+  onDelete,
 }: PlantFormFooterProps) {
+  const saveLabel = isEditing ? FOOTER_COPY.saveChanges : FOOTER_COPY.save;
+
   return (
     <div className={styles.footer}>
+      {onDelete && (
+        <Button
+          variant="secondary"
+          className={styles.delete}
+          onClick={onDelete}
+        >
+          <Icon name="trash" />
+          {FOOTER_COPY.delete}
+        </Button>
+      )}
       {error && (
         <p role="alert" className={styles.error}>
           {error}
@@ -30,7 +44,7 @@ export function PlantFormFooter({
           title={canSave ? undefined : FOOTER_COPY.saveDisabledHint}
         >
           <Icon name="check" />
-          {isSaving ? FOOTER_COPY.saving : FOOTER_COPY.save}
+          {isSaving ? FOOTER_COPY.saving : saveLabel}
         </Button>
       </div>
     </div>

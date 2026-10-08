@@ -11,7 +11,7 @@ import {
 import { copy } from '@/data/copy';
 import { useDebouncedCommit } from '@/hooks/useDebouncedCommit';
 import { useKeyboardShortcut } from '@/hooks/useKeyboardShortcut';
-import type { PlantSearchBarProps } from '@/types/components/plants';
+import type { PlantSearchBarProps } from '@/types/components/plantFilters';
 import styles from './PlantSearchBar.module.css';
 
 const SEARCH_COPY = copy.plants.search;

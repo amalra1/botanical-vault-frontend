@@ -3,21 +3,20 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { DeletePlantDialog } from '@/components/plants/DeletePlantDialog/DeletePlantDialog';
 import { DraftImageGrid } from '@/components/plants/DraftImageGrid/DraftImageGrid';
 import { ImageDropZone } from '@/components/plants/ImageDropZone/ImageDropZone';
 import { PlantFormFields } from '@/components/plants/PlantFormFields/PlantFormFields';
 import { PlantFormFooter } from '@/components/plants/PlantFormFooter/PlantFormFooter';
 import { copy } from '@/data/copy';
 import { useDraftImages } from '@/hooks/useDraftImages';
-import { useSnackbar } from '@/hooks/useSnackbar';
+import { usePlantSave } from '@/hooks/usePlantSave';
 import { formatCopy } from '@/lib/formatCopy';
-import { notifyPlantsChanged } from '@/lib/plantChanges';
+import { toDraftImages, toPlantFormValues } from '@/lib/plantImages';
 import { splitPngFiles } from '@/lib/pngFiles';
 import { plantFormSchema } from '@/schemas/plantFormSchema';
-import { plantService } from '@/services/plantService';
 import type { PlantFormProps } from '@/types/components/plants';
 import type { PlantFormValues } from '@/types/plant';
-import { plantSaveErrorMessage } from './plantSaveErrorMessage';
 import styles from './PlantForm.module.css';
 
 const EMPTY_PLANT = {
@@ -27,7 +26,6 @@ const EMPTY_PLANT = {
   notes: '',
 };
 const FILE_LIST_SEPARATOR = ', ';
-const CREATED_COPY = copy.snackbar.plantCreated;
 
 function rejectedFilesMessage(rejected: File[]) {
   if (rejected.length === 0) {
@@ -37,11 +35,16 @@ function rejectedFilesMessage(rejected: File[]) {
   return formatCopy(copy.plantForm.errors.onlyPng, { files });
 }
 
-export function PlantForm({ taxonomies, onClose }: PlantFormProps) {
-  const draft = useDraftImages();
-  const { notify } = useSnackbar();
+export function PlantForm({
+  taxonomies,
+  plant,
+  onClose,
+  onSaved,
+  onDeleted,
+}: PlantFormProps) {
+  const draft = useDraftImages(plant && toDraftImages(plant));
   const [fileError, setFileError] = useState<string | null>(null);
-  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isConfirmingDelete, setIsConfirmingDelete] = useState(false);
   const {
     control,
     handleSubmit,
@@ -49,33 +52,21 @@ export function PlantForm({ taxonomies, onClose }: PlantFormProps) {
   } = useForm<PlantFormValues>({
     resolver: zodResolver(plantFormSchema),
     mode: 'onChange',
-    defaultValues: EMPTY_PLANT,
+    defaultValues: plant ? toPlantFormValues(plant) : EMPTY_PLANT,
+  });
+  const { submit, submitError } = usePlantSave({
+    plant,
+    images: draft.images,
+    onSaved,
   });
   const [defaultView] = taxonomies.imageViews;
+  const canDelete = plant !== undefined && onDeleted !== undefined;
 
   const addFiles = (files: File[]) => {
     const { accepted, rejected } = splitPngFiles(files);
     setFileError(rejectedFilesMessage(rejected));
     if (defaultView && accepted.length > 0) {
       draft.add(accepted, defaultView.id);
-    }
-  };
-
-  const submit = async (values: PlantFormValues) => {
-    setSubmitError(null);
-    try {
-      const images = draft.images.map(({ file, viewId }) => ({ file, viewId }));
-      await plantService.create({ ...values, images });
-      notifyPlantsChanged();
-      notify({
-        title: CREATED_COPY.title,
-        description: formatCopy(CREATED_COPY.description, {
-          name: values.commonName,
-        }),
-      });
-      onClose();
-    } catch (error) {
-      setSubmitError(plantSaveErrorMessage(error));
     }
   };
 
@@ -101,14 +92,23 @@ export function PlantForm({ taxonomies, onClose }: PlantFormProps) {
       <PlantFormFields
         control={control}
         taxonomies={taxonomies}
-        firstFilename={draft.images[0].file.name}
+        firstFilename={plant ? null : draft.images[0].filename}
       />
       <PlantFormFooter
         canSave={isValid}
         isSaving={isSubmitting}
+        isEditing={plant !== undefined}
         error={submitError}
         onCancel={onClose}
+        onDelete={canDelete ? () => setIsConfirmingDelete(true) : undefined}
       />
+      {isConfirmingDelete && plant && onDeleted && (
+        <DeletePlantDialog
+          plant={plant}
+          onCancel={() => setIsConfirmingDelete(false)}
+          onDeleted={onDeleted}
+        />
+      )}
     </form>
   );
 }

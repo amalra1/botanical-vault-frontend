@@ -8,6 +8,10 @@ export const ICON_PATHS = {
   ],
   image: ['M4 5h16v14H4z', 'M4 16l5-5 4 4 3-3 4 4'],
   leaf: ['M5 19c0-8 5-13 14-14 0 9-5 14-13 14', 'M5 19l8-8'],
+  pencil: ['M4 20h4L19 9l-4-4L4 16v4z', 'M13.5 6.5l4 4'],
+  copy: ['M9 9h11v11H9z', 'M5 15H4V4h11v1'],
+  download: ['M12 4v11', 'M7 10l5 5 5-5', 'M5 20h14'],
+  trash: ['M4 7h16', 'M9 7V4h6v3', 'M6 7l1 13h10l1-13'],
 } as const;
 
 export const ICON_STROKE_WIDTH = 2;

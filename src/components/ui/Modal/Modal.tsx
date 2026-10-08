@@ -13,6 +13,8 @@ function preventFileNavigation(event: DragEvent<HTMLDialogElement>) {
 
 export function Modal({
   labelledBy,
+  describedBy,
+  role,
   onClose,
   className,
   children,
@@ -33,6 +35,9 @@ export function Modal({
   }, []);
 
   const handleCancel = (event: SyntheticEvent<HTMLDialogElement>) => {
+    if (event.target !== dialogRef.current) {
+      return;
+    }
     event.preventDefault();
     onClose();
   };
@@ -46,7 +51,9 @@ export function Modal({
   return (
     <dialog
       ref={dialogRef}
+      role={role}
       aria-labelledby={labelledBy}
+      aria-describedby={describedBy}
       className={cx(styles.dialog, className)}
       onCancel={handleCancel}
       onClick={handleBackdropClick}

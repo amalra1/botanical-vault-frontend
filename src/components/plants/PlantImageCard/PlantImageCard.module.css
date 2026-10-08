@@ -1,0 +1,81 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 0;
+  animation: pop var(--duration-slow) var(--ease-out) backwards;
+}
+
+.thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.view {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius);
+  background: var(--color-glass);
+  -webkit-backdrop-filter: var(--badge-filter);
+  backdrop-filter: var(--badge-filter);
+  color: var(--color-forest);
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  min-width: 0;
+  padding: 0 var(--space-2xs);
+}
+
+.filename {
+  overflow: hidden;
+  color: var(--color-text-strong);
+  font-size: var(--text-sm);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dimensions {
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  letter-spacing: var(--tracking-label);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.actions .copy {
+  flex: 1;
+  padding: 0 var(--space-md);
+}
+
+.actions .copied {
+  background: var(--color-mint);
+  color: var(--color-forest);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(var(--modal-enter-scale));
+  }
+}

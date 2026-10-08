@@ -15,6 +15,7 @@ export function PlantResults({
   origins,
   onRetry,
   onClear,
+  onOpenPlant,
 }: PlantResultsProps) {
   if (error) {
     return (
@@ -43,6 +44,7 @@ export function PlantResults({
       plants={result.plants}
       origins={origins}
       isUpdating={isUpdating}
+      onOpenPlant={onOpenPlant}
     />
   );
 }

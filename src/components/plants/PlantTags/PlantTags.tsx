@@ -1,12 +1,12 @@
 import { copy } from '@/data/copy';
 import { cx } from '@/lib/classNames';
 import { originTone } from '@/lib/originTone';
-import type { PlantCardProps } from '@/types/components/plants';
+import type { PlantTagsProps } from '@/types/components/plants';
 import styles from './PlantTags.module.css';
 
 const TONE_CLASSES = [styles.tone0, styles.tone1, styles.tone2];
 
-export function PlantTags({ plant, origins }: PlantCardProps) {
+export function PlantTags({ plant, origins, size }: PlantTagsProps) {
   return (
     <ul className={styles.tags}>
       {plant.origins.map((origin) => (
@@ -26,6 +26,11 @@ export function PlantTags({ plant, origins }: PlantCardProps) {
         </li>
       )}
       <li className={cx(styles.tag, styles.type)}>{plant.type.name}</li>
+      {size && (
+        <li className={cx(styles.tag, styles.type)}>
+          {size.description ?? size.name}
+        </li>
+      )}
     </ul>
   );
 }

@@ -29,22 +29,6 @@ export interface Plant {
   updatedAt: string;
 }
 
-export interface DraftImage {
-  id: string;
-  file: File;
-  previewUrl: string;
-  viewId: number;
-}
-
-export interface PlantImageUpload {
-  file: File;
-  viewId: number;
-}
-
-export interface PlantCreatePayload extends PlantFormValues {
-  images: PlantImageUpload[];
-}
-
 export interface SplitPngFiles {
   accepted: File[];
   rejected: File[];
@@ -123,3 +107,5 @@ export interface PluralCopy {
 export interface ReadableSearchParams {
   get: (name: string) => string | null;
 }
+
+export type PlantTagSource = Pick<PlantSummary, 'origins' | 'type'>;

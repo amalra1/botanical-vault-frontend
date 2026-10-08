@@ -2,13 +2,12 @@
 
 import { useId } from 'react';
 import { PlantForm } from '@/components/plants/PlantForm/PlantForm';
-import { IconButton } from '@/components/ui/IconButton/IconButton';
 import { LoadStatus } from '@/components/ui/LoadStatus/LoadStatus';
 import { Modal } from '@/components/ui/Modal/Modal';
+import { ModalHeader } from '@/components/ui/ModalHeader/ModalHeader';
 import { copy } from '@/data/copy';
 import { useTaxonomies } from '@/hooks/useTaxonomies';
 import type { PlantFormModalProps } from '@/types/components/plants';
-import styles from './PlantFormModal.module.css';
 
 const FORM_COPY = copy.plantForm;
 
@@ -18,14 +17,13 @@ export function PlantFormModal({ onClose }: PlantFormModalProps) {
 
   return (
     <Modal labelledBy={titleId} onClose={onClose}>
-      <header className={styles.header}>
-        <h2 id={titleId} className={styles.title}>
-          {copy.plantForm.titleNew}
-        </h2>
-        <IconButton icon="close" label={copy.modal.close} onClick={onClose} />
-      </header>
+      <ModalHeader
+        titleId={titleId}
+        title={FORM_COPY.titleNew}
+        onClose={onClose}
+      />
       {data ? (
-        <PlantForm taxonomies={data} onClose={onClose} />
+        <PlantForm taxonomies={data} onClose={onClose} onSaved={onClose} />
       ) : (
         <LoadStatus
           isLoading={isLoading}

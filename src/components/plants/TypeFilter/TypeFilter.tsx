@@ -3,7 +3,7 @@ import { FieldGroup } from '@/components/ui/FieldGroup/FieldGroup';
 import { copy } from '@/data/copy';
 import { facetCount } from '@/lib/facetCount';
 import { pluralCopy } from '@/lib/pluralCopy';
-import type { TypeFilterProps } from '@/types/components/plants';
+import type { TypeFilterProps } from '@/types/components/plantFilters';
 import styles from './TypeFilter.module.css';
 
 const FILTERS_COPY = copy.plants.filters;

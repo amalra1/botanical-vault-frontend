@@ -2,7 +2,7 @@ import { OriginFilter } from '@/components/plants/OriginFilter/OriginFilter';
 import { SegmentedFacetFilter } from '@/components/plants/SegmentedFacetFilter/SegmentedFacetFilter';
 import { TypeFilter } from '@/components/plants/TypeFilter/TypeFilter';
 import { copy } from '@/data/copy';
-import type { PlantFiltersProps } from '@/types/components/plants';
+import type { PlantFiltersProps } from '@/types/components/plantFilters';
 import styles from './PlantFilters.module.css';
 
 const FILTERS_COPY = copy.plants.filters;

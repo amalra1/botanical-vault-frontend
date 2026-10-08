@@ -122,6 +122,8 @@
   --content-max: 1240px;
   --header-height: 64px;
   --modal-max: 900px;
+  --confirm-max: 440px;
+  --plant-image-min: 200px;
   --modal-viewport-gap: var(--space-xl);
   --dropzone-min-height: 360px;
   --dropzone-viewport-share: 55dvh;

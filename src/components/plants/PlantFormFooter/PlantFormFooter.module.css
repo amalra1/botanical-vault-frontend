@@ -15,6 +15,11 @@
   backdrop-filter: var(--footer-filter);
 }
 
+.footer .delete {
+  margin-right: auto;
+  color: var(--color-danger);
+}
+
 .error {
   flex: 1;
   color: var(--color-danger);

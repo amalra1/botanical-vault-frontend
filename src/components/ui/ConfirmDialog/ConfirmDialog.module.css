@@ -1,0 +1,26 @@
+dialog.dialog {
+  width: min(var(--confirm-max), calc(100vw - 2 * var(--modal-viewport-gap)));
+}
+
+.title {
+  color: var(--color-forest);
+  font-size: var(--text-3xl);
+  overflow-wrap: anywhere;
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}

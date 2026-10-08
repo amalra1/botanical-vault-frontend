@@ -3,7 +3,7 @@ import { SegmentedControl } from '@/components/ui/SegmentedControl/SegmentedCont
 import { ALL_OPTION } from '@/constants/plantFilters';
 import { copy } from '@/data/copy';
 import { facetCount } from '@/lib/facetCount';
-import type { SegmentedFacetFilterProps } from '@/types/components/plants';
+import type { SegmentedFacetFilterProps } from '@/types/components/plantFilters';
 
 export function SegmentedFacetFilter({
   label,

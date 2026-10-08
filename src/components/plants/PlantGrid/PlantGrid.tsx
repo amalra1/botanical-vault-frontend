@@ -3,7 +3,12 @@ import { cx } from '@/lib/classNames';
 import type { PlantGridProps } from '@/types/components/plants';
 import styles from './PlantGrid.module.css';
 
-export function PlantGrid({ plants, origins, isUpdating }: PlantGridProps) {
+export function PlantGrid({
+  plants,
+  origins,
+  isUpdating,
+  onOpenPlant,
+}: PlantGridProps) {
   return (
     <ul
       className={cx(styles.grid, isUpdating && styles.updating)}
@@ -11,7 +16,7 @@ export function PlantGrid({ plants, origins, isUpdating }: PlantGridProps) {
     >
       {plants.map((plant) => (
         <li key={plant.id}>
-          <PlantCard plant={plant} origins={origins} />
+          <PlantCard plant={plant} origins={origins} onOpen={onOpenPlant} />
         </li>
       ))}
     </ul>

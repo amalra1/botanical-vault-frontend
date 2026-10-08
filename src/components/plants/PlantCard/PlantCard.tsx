@@ -1,16 +1,16 @@
 import Image from 'next/image';
+import { PlantTags } from '@/components/plants/PlantTags/PlantTags';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { PLANT_CARD_IMAGE_SIZES } from '@/constants/plantFilters';
 import { copy } from '@/data/copy';
 import { cx } from '@/lib/classNames';
 import { pluralCopy } from '@/lib/pluralCopy';
 import type { PlantCardProps } from '@/types/components/plants';
-import { PlantTags } from './PlantTags';
 import styles from './PlantCard.module.css';
 
 const CARD_COPY = copy.plants.card;
 
-export function PlantCard({ plant, origins }: PlantCardProps) {
+export function PlantCard({ plant, origins, onOpen }: PlantCardProps) {
   return (
     <article className={styles.card}>
       <div className={cx(styles.thumb, 'checker')}>
@@ -37,7 +37,15 @@ export function PlantCard({ plant, origins }: PlantCardProps) {
         </div>
       </div>
       <div className={styles.body}>
-        <h3 className={styles.name}>{plant.commonName}</h3>
+        <h3 className={styles.name}>
+          <button
+            type="button"
+            className={styles.open}
+            onClick={() => onOpen(plant.id)}
+          >
+            {plant.commonName}
+          </button>
+        </h3>
         {plant.scientificName && (
           <p className={styles.scientific}>{plant.scientificName}</p>
         )}
