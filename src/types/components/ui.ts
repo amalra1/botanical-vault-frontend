@@ -3,11 +3,6 @@ import type { ICON_PATHS } from '@/constants/icons';
 import type { SnackbarMessage } from '@/types/snackbar';
 import type { Vine } from '@/types/vines';
 
-export interface PagePlaceholderProps {
-  title: string;
-  description: string;
-}
-
 export type ButtonVariant = 'primary' | 'secondary' | 'danger';
 
 export interface ButtonProps extends ComponentPropsWithRef<'button'> {

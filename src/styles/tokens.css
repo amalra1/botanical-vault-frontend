@@ -27,6 +27,10 @@
   --color-tag-neutral-text: #1f2a24;
   --color-tag-outline: #b9c6be;
   --color-skeleton: #edf1ee;
+  --color-warning-soft: #fff4d6;
+  --color-warning-text: #5c4300;
+  --color-staircase-floor: #d5ded8;
+  --color-staircase-bg: #f6f8f6;
 
   --color-text: var(--color-forest);
   --color-text-strong: #0b1f14;
@@ -131,6 +135,15 @@
   --search-max: 720px;
   --search-height: 60px;
   --plant-card-min: 220px;
+  --collection-card-min: 280px;
+  --collection-row-min: 300px;
+  --collection-thumb: 72px;
+  --picker-width: 300px;
+  --staircase-min: 90px;
+  --staircase-max: 250px;
+  --staircase-column-min: 104px;
+  --staircase-floor-width: 2px;
+  --staircase-grow-from: 0.4;
   --filter-tile-min: 120px;
   --filter-group-min: 260px;
   --image-tile-min: 170px;

@@ -30,6 +30,8 @@ function toFormData({ images, ...plant }: PlantSavePayload) {
   return body;
 }
 
+const FAVORITE_SEGMENT = '/favorite';
+
 function plantPath(id: number) {
   return `${API_PATHS.plants}/${id}`;
 }
@@ -58,5 +60,9 @@ export const plantService = {
   },
   delete: async (id: number): Promise<void> => {
     await api.delete(plantPath(id));
+  },
+  setFavorite: async (id: number, favorite: boolean): Promise<void> => {
+    const path = `${plantPath(id)}${FAVORITE_SEGMENT}`;
+    await (favorite ? api.put(path) : api.delete(path));
   },
 };

@@ -27,6 +27,8 @@ export interface Plant {
   images: PlantImage[];
   createdAt: string;
   updatedAt: string;
+  favorite: boolean;
+  collectionIds: number[];
 }
 
 export interface SplitPngFiles {
@@ -66,6 +68,7 @@ export interface PlantSummary {
   origins: TaxonomyItem[];
   imageCount: number;
   coverUrl: string | null;
+  favorite: boolean;
 }
 
 export interface FacetCount {

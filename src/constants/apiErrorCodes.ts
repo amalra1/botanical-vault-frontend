@@ -5,4 +5,5 @@ export const API_ERROR_CODES = {
   fileTooLarge: 'FILE_TOO_LARGE',
   duplicateImage: 'DUPLICATE_IMAGE',
   resourceNotFound: 'RESOURCE_NOT_FOUND',
+  favoritesLocked: 'FAVORITES_LOCKED',
 } as const;

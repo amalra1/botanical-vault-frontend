@@ -1,12 +1,7 @@
-const listeners = new Set<() => void>();
+import { createChangeSignal } from './changeSignal';
 
-export function subscribeToPlantChanges(listener: () => void) {
-  listeners.add(listener);
-  return () => {
-    listeners.delete(listener);
-  };
-}
+export const plantChanges = createChangeSignal();
 
 export function notifyPlantsChanged() {
-  listeners.forEach((listener) => listener());
+  plantChanges.notify();
 }

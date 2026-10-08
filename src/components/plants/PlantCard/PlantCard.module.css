@@ -40,18 +40,8 @@
   color: var(--color-text-subtle);
 }
 
-.badges {
-  position: absolute;
-  top: var(--space-sm);
-  right: var(--space-sm);
-  left: var(--space-sm);
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-xs);
-  pointer-events: none;
-}
-
 .badge {
+  position: absolute;
   padding: var(--space-2xs) var(--space-sm);
   border-radius: var(--radius);
   background: var(--color-glass);
@@ -64,6 +54,24 @@
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   white-space: nowrap;
+  pointer-events: none;
+}
+
+.sizeBadge {
+  top: var(--space-sm);
+  left: var(--space-sm);
+}
+
+.countBadge {
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+}
+
+.favorite {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  z-index: 1;
 }
 
 .body {

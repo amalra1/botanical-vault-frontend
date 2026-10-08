@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-sm);
+}
+
+.field {
+  flex: 1 1 var(--field-min);
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-xs);
+}

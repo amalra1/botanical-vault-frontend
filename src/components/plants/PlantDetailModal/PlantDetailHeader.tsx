@@ -1,3 +1,5 @@
+import { CollectionPicker } from '@/components/plants/CollectionPicker/CollectionPicker';
+import { FavoriteButton } from '@/components/plants/FavoriteButton/FavoriteButton';
 import { PlantTags } from '@/components/plants/PlantTags/PlantTags';
 import { IconButton } from '@/components/ui/IconButton/IconButton';
 import { copy } from '@/data/copy';
@@ -25,6 +27,8 @@ export function PlantDetailHeader({
         <PlantTags plant={plant} origins={origins} size={plant.size} />
       </div>
       <div className={styles.actions}>
+        <FavoriteButton plant={plant} />
+        <CollectionPicker plant={plant} />
         <IconButton
           icon="pencil"
           label={copy.plantDetail.edit}

@@ -1,6 +1,5 @@
-import { PagePlaceholder } from '@/components/ui/PagePlaceholder/PagePlaceholder';
-import { copy } from '@/data/copy';
+import { CollectionsPage } from '@/components/collections/CollectionsPage/CollectionsPage';
 
-export default function CollectionsPage() {
-  return <PagePlaceholder {...copy.pages.collections} />;
+export default function CollectionsRoute() {
+  return <CollectionsPage />;
 }

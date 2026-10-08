@@ -1,9 +1,14 @@
 import { useCallback, useEffect } from 'react';
-import { subscribeToPlantChanges } from '@/lib/plantChanges';
+import {
+  applyFavoriteChange,
+  subscribeToFavoriteChanges,
+} from '@/lib/favoriteChanges';
+import { plantChanges } from '@/lib/plantChanges';
 import { serializePlantFilters } from '@/lib/plantFilterParams';
 import { plantService } from '@/services/plantService';
 import type { PlantFilters } from '@/types/plant';
 import { useAsyncData } from './useAsyncData';
+import { useChangeVersion } from './useChangeVersion';
 
 export function usePlantSearch(filters: PlantFilters) {
   const key = serializePlantFilters(filters);
@@ -11,9 +16,26 @@ export function usePlantSearch(filters: PlantFilters) {
     async () => ({ key, result: await plantService.search(filters) }),
     [key, filters],
   );
-  const { data, error, isLoading, reload } = useAsyncData(fetcher);
+  const { data, error, isLoading, reload, mutate } = useAsyncData(
+    fetcher,
+    useChangeVersion(plantChanges),
+  );
 
-  useEffect(() => subscribeToPlantChanges(reload), [reload]);
+  useEffect(
+    () =>
+      subscribeToFavoriteChanges((change) =>
+        mutate((current) => ({
+          ...current,
+          result: {
+            ...current.result,
+            plants: current.result.plants.map((plant) =>
+              applyFavoriteChange(plant, change),
+            ),
+          },
+        })),
+      ),
+    [mutate],
+  );
 
   return {
     result: data?.result ?? null,

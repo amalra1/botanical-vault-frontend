@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { FavoriteButton } from '@/components/plants/FavoriteButton/FavoriteButton';
 import { PlantTags } from '@/components/plants/PlantTags/PlantTags';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { PLANT_CARD_IMAGE_SIZES } from '@/constants/plantFilters';
@@ -27,15 +28,18 @@ export function PlantCard({ plant, origins, onOpen }: PlantCardProps) {
             <Icon name="image" />
           </span>
         )}
-        <div className={styles.badges}>
-          <span className={styles.badge}>
-            {plant.size.description ?? plant.size.name}
-          </span>
-          <span className={styles.badge}>
-            {pluralCopy(plant.imageCount, CARD_COPY.images)}
-          </span>
-        </div>
+        <span className={cx(styles.badge, styles.sizeBadge)}>
+          {plant.size.description ?? plant.size.name}
+        </span>
+        <span className={cx(styles.badge, styles.countBadge)}>
+          {pluralCopy(plant.imageCount, CARD_COPY.images)}
+        </span>
       </div>
+      <FavoriteButton
+        plant={plant}
+        variant="glass"
+        className={styles.favorite}
+      />
       <div className={styles.body}>
         <h3 className={styles.name}>
           <button

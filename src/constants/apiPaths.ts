@@ -5,4 +5,5 @@ export const API_PATHS = {
   sizes: '/sizes',
   imageViews: '/image-views',
   plants: '/plants',
+  collections: '/collections',
 } as const;

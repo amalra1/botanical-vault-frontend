@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-lg) var(--space-xl);
+}
+
+.identity {
+  display: flex;
+  flex: 1 1 var(--field-min);
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
+.meta {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}

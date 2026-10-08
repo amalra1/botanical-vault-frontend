@@ -83,6 +83,86 @@
     "logout": "Sair",
     "newPlant": "Nova planta"
   },
+  "nav": {
+    "label": "Principal",
+    "plants": "Plantas",
+    "collections": "Coleções"
+  },
+  "favorite": {
+    "toggle": "Favoritar {name}"
+  },
+  "collections": {
+    "new": "Nova coleção",
+    "loading": "Carregando as coleções…",
+    "retry": "Tentar de novo",
+    "fixed": "Fixa",
+    "open": "Abrir {name}",
+    "plantCount": {
+      "one": "1 planta",
+      "many": "{count} plantas"
+    },
+    "updatedAt": "atualizada em {date}",
+    "metaSeparator": " · ",
+    "staircase": "Escadinha",
+    "sizeCovered": "{size}: tem planta",
+    "sizeMissing": "{size}: falta planta",
+    "form": {
+      "title": "Nova coleção",
+      "nameLabel": "Nome",
+      "namePlaceholder": "Ex.: Residência Água Verde — quintal",
+      "cancel": "Cancelar",
+      "create": "Criar",
+      "creating": "Criando…"
+    },
+    "errors": {
+      "nameRequired": "Informe o nome da coleção.",
+      "nameTooLong": "Use até {max} caracteres.",
+      "duplicateName": "Já existe uma coleção com esse nome.",
+      "load": "Não foi possível carregar as coleções. Tente novamente.",
+      "create": "Não foi possível criar a coleção. Tente novamente."
+    }
+  },
+  "collectionModal": {
+    "title": "Coleção",
+    "loading": "Carregando a coleção…",
+    "retry": "Tentar de novo",
+    "rename": "Renomear coleção",
+    "nameLabel": "Nome da coleção",
+    "save": "Salvar",
+    "saving": "Salvando…",
+    "cancelRename": "Cancelar",
+    "addPlants": "Adicionar plantas",
+    "delete": "Excluir coleção",
+    "staircaseTitle": "Escadinha",
+    "complete": "Tem todos os portes",
+    "missing": "Falta porte {sizes}",
+    "plantsTitle": "Plantas",
+    "openPlant": "Ver imagens de {name}",
+    "remove": "Tirar {name} da coleção",
+    "unfavorite": "Desfavoritar {name}",
+    "emptyTitle": "Coleção vazia",
+    "emptyDescription": "Abra uma planta no cofre e use o botão “Coleções” para trazê-la para cá.",
+    "errors": {
+      "load": "Não foi possível carregar a coleção. Tente novamente.",
+      "rename": "Não foi possível renomear a coleção. Tente novamente."
+    }
+  },
+  "deleteCollectionDialog": {
+    "title": "Excluir “{name}”?",
+    "description": "A coleção sai do cofre. As plantas continuam na biblioteca.",
+    "cancel": "Cancelar",
+    "confirm": "Excluir",
+    "deleting": "Excluindo…",
+    "error": "Não foi possível excluir a coleção. Tente novamente."
+  },
+  "collectionPicker": {
+    "button": "Coleções",
+    "title": "Adicionar à coleção",
+    "new": "Nova coleção",
+    "loading": "Carregando as coleções…",
+    "empty": "Nenhuma coleção ainda.",
+    "error": "Não foi possível carregar as coleções."
+  },
   "modal": {
     "close": "Fechar"
   },
@@ -196,6 +276,22 @@
     "plantDeleted": {
       "title": "Planta excluída",
       "description": "{name} saiu do cofre."
+    },
+    "collectionCreated": {
+      "title": "Coleção criada",
+      "description": "{name} já pode receber plantas."
+    },
+    "collectionDeleted": {
+      "title": "Coleção excluída",
+      "description": "{name} saiu do cofre."
+    },
+    "favoriteError": {
+      "title": "Não deu para favoritar",
+      "description": "Tente novamente em instantes."
+    },
+    "membershipError": {
+      "title": "Não deu para atualizar a coleção",
+      "description": "Tente novamente em instantes."
     }
   }
 }

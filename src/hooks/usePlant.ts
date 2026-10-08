@@ -1,4 +1,8 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
+import {
+  applyFavoriteChange,
+  subscribeToFavoriteChanges,
+} from '@/lib/favoriteChanges';
 import { plantService } from '@/services/plantService';
 import { useAsyncData } from './useAsyncData';
 
@@ -7,5 +11,16 @@ export function usePlant(plantId: number) {
     () => plantService.getById(plantId),
     [plantId],
   );
-  return useAsyncData(fetchPlant);
+  const plant = useAsyncData(fetchPlant);
+  const { mutate } = plant;
+
+  useEffect(
+    () =>
+      subscribeToFavoriteChanges((change) =>
+        mutate((current) => applyFavoriteChange(current, change)),
+      ),
+    [mutate],
+  );
+
+  return plant;
 }

@@ -1,0 +1,12 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.title {
+  color: var(--color-forest);
+  font-size: var(--text-4xl);
+  overflow-wrap: anywhere;
+}

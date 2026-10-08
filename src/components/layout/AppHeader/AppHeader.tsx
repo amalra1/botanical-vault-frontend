@@ -1,4 +1,5 @@
 import { LogoutButton } from '@/components/auth/LogoutButton/LogoutButton';
+import { AppNav } from '@/components/layout/AppNav/AppNav';
 import { HeaderVines } from '@/components/layout/HeaderVines/HeaderVines';
 import { NewPlantButton } from '@/components/plants/NewPlantButton/NewPlantButton';
 import { copy } from '@/data/copy';
@@ -10,6 +11,7 @@ export function AppHeader() {
       <HeaderVines />
       <div className={styles.inner}>
         <span className={styles.brand}>{copy.metadata.title}</span>
+        <AppNav />
         <div className={styles.actions}>
           <NewPlantButton />
           <LogoutButton />

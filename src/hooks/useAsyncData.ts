@@ -2,8 +2,12 @@ import { useCallback, useEffect, useState } from 'react';
 import type { AsyncData, AsyncState } from '@/types/async';
 
 const INITIAL_STATE = { data: null, error: null, isLoading: true };
+const NO_REFRESH = 0;
 
-export function useAsyncData<T>(fetcher: () => Promise<T>): AsyncData<T> {
+export function useAsyncData<T>(
+  fetcher: () => Promise<T>,
+  refreshKey = NO_REFRESH,
+): AsyncData<T> {
   const [state, setState] = useState<AsyncState<T>>(INITIAL_STATE);
   const [requestCount, setRequestCount] = useState(0);
 
@@ -24,7 +28,7 @@ export function useAsyncData<T>(fetcher: () => Promise<T>): AsyncData<T> {
     return () => {
       isCurrent = false;
     };
-  }, [fetcher, requestCount]);
+  }, [fetcher, requestCount, refreshKey]);
 
   const reload = useCallback(() => {
     setState((current) => ({ ...current, error: null, isLoading: true }));

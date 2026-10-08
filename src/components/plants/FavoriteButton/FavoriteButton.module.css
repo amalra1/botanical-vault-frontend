@@ -1,0 +1,7 @@
+.favorite svg {
+  transition: fill var(--duration-fast) ease;
+}
+
+.favorite[aria-pressed='true'] svg {
+  fill: var(--color-mint);
+}
