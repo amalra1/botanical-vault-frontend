@@ -1,10 +1,14 @@
-# Botanical Vault Frontend
+# Botanical Vault · Frontend
 
-**Cofre de Plantas** is a private web app where an architect stores and finds the plant images (transparent PNGs) she uses in architectural collages. It replaces an unorganized local folder with a cloud library she can search, filter and organize by project.
+A private cloud library of transparent plant PNGs for architectural collages. Search and filter species by native biome, type, size, light and image view, then copy a PNG straight into Photoshop or download it.
+Plants are grouped into project collections that show whether the small/medium/large "staircase" is covered. This repo is the Next.js front end; the API lives in [botanical-vault-backend](https://github.com/amalra1/botanical-vault-backend).
 
-The system has a single user (the architect). Login exists only to keep the library private; there is no sign-up, sharing or multi-tenancy.
+![Plants](docs/screenshots/plants.jpg)
 
-The project is split into two repositories:
+![Filters](docs/screenshots/filters.jpg)
 
-- **botanical-vault-backend**: Java/Spring Boot REST API (data, auth, image storage).
-- **botanical-vault-frontend** (this one): React/Next.js front end.
+![Plant detail](docs/screenshots/plant-detail.jpg)
+
+![Plant form](docs/screenshots/plant-form.jpg)
+
+![Collections](docs/screenshots/collections.jpg)
