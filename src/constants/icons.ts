@@ -51,6 +51,11 @@ export const ICON_PATHS = {
     'M15 18h.01',
   ],
   logout: ['M14 4h5v16h-5', 'M10 8l-4 4 4 4', 'M6 12h10'],
+  help: [
+    'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z',
+    'M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.4',
+    'M12 17h.01',
+  ],
 } as const;
 
 export const ICON_STROKE_WIDTH = 2;

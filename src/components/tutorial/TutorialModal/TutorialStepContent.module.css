@@ -1,0 +1,44 @@
+.step {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  min-width: 0;
+  animation: rise var(--duration-base) var(--ease-out) backwards;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--control-xl);
+  height: var(--control-xl);
+  margin-bottom: var(--space-2xs);
+  border-radius: var(--radius);
+  background: var(--color-mint-soft);
+  color: var(--color-forest);
+}
+
+.badge .icon {
+  width: var(--icon-lg);
+  height: var(--icon-lg);
+}
+
+.title {
+  color: var(--color-forest);
+  font-size: var(--text-3xl);
+  overflow-wrap: anywhere;
+}
+
+.text {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+  }
+}

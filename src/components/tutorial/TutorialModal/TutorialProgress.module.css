@@ -1,0 +1,38 @@
+.progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3xs);
+  height: var(--size-bar-max);
+}
+
+.bar {
+  width: var(--size-bar-width);
+  height: calc(
+    var(--size-bar-min) + (var(--size-bar-max) - var(--size-bar-min)) *
+      var(--step-level) / var(--step-span)
+  );
+  border-radius: var(--radius);
+  background: var(--color-light-grey);
+  transition: background-color var(--duration-base) var(--ease-out);
+}
+
+.reached {
+  background: var(--color-mint);
+}
+
+.current {
+  background: var(--color-forest);
+}
+
+.count {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  letter-spacing: var(--tracking-label);
+}

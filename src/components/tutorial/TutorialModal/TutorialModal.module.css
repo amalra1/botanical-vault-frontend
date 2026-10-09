@@ -1,0 +1,30 @@
+dialog.dialog {
+  width: min(var(--tutorial-max), calc(100vw - 2 * var(--modal-viewport-gap)));
+}
+
+.tutorial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-left: auto;
+}

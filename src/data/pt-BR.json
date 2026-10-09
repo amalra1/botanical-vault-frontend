@@ -85,7 +85,8 @@
   },
   "header": {
     "newPlant": "Nova planta",
-    "settings": "Configurações"
+    "settings": "Configurações",
+    "tutorial": "Como usar"
   },
   "nav": {
     "label": "Principal",
@@ -285,6 +286,33 @@
   },
   "modal": {
     "close": "Fechar"
+  },
+  "tutorial": {
+    "close": "Fechar",
+    "skip": "Pular",
+    "back": "Voltar",
+    "next": "Próximo",
+    "done": "Bora colar",
+    "progress": "{current} / {total}",
+    "progressLabel": "Passo {current} de {total}",
+    "steps": {
+      "search": {
+        "title": "Ache rápido",
+        "text": "Busque pelo nome popular ou científico e afine por tipo, origem, porte e vista."
+      },
+      "copy": {
+        "title": "Copie e cole",
+        "text": "Abra uma planta, escolha a imagem e use “Copiar PNG”. Vai direto para o Photoshop."
+      },
+      "collections": {
+        "title": "Junte por projeto",
+        "text": "Monte coleções, confira a escadinha P/M/G e baixe tudo num .zip."
+      },
+      "newPlant": {
+        "title": "Plante mais uma",
+        "text": "Em “Nova planta”, solte os PNGs. O nome já vem do arquivo."
+      }
+    }
   },
   "plantForm": {
     "titleNew": "Nova planta",
