@@ -80,6 +80,7 @@
       "emailInvalid": "Informe um e-mail válido.",
       "passwordRequired": "Informe a senha.",
       "invalidCredentials": "E-mail ou senha incorretos.",
+      "tooManyAttempts": "Muitas tentativas. Tente de novo em {minutes} min.",
       "unexpected": "Não foi possível entrar. Tente novamente."
     }
   },

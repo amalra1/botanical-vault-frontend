@@ -38,6 +38,8 @@ steps:
       - '0'
       - '--max-instances'
       - '1'
+      - '--timeout'
+      - '30'
 
 substitutions:
   _REGION: us-east1
