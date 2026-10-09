@@ -60,8 +60,7 @@
     "empty": {
       "noResultsTitle": "Nenhuma planta encontrada.",
       "noResultsDescription": "Tente outra combinação de filtros.",
-      "libraryTitle": "O cofre ainda está vazio",
-      "libraryDescription": "Cadastre a primeira planta para começar a sua biblioteca."
+      "libraryTitle": "O Cofre está vazio"
     },
     "loading": "Carregando as plantas…",
     "retry": "Tentar de novo",

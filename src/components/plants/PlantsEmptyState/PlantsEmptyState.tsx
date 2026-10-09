@@ -16,11 +16,9 @@ export function PlantsEmptyState({ variant, onClear }: PlantsEmptyStateProps) {
       <h3 className={styles.title}>
         {isLibraryEmpty ? EMPTY_COPY.libraryTitle : EMPTY_COPY.noResultsTitle}
       </h3>
-      <p className={styles.description}>
-        {isLibraryEmpty
-          ? EMPTY_COPY.libraryDescription
-          : EMPTY_COPY.noResultsDescription}
-      </p>
+      {!isLibraryEmpty && (
+        <p className={styles.description}>{EMPTY_COPY.noResultsDescription}</p>
+      )}
       {isLibraryEmpty ? (
         <NewPlantButton />
       ) : (
