@@ -43,6 +43,7 @@ export function toPlantFormValues(plant: Plant): PlantFormValues {
     originIds: plant.origins.map((origin) => origin.id),
     typeId: plant.type.id,
     sizeId: plant.size.id,
+    lightExposures: plant.lightExposures,
     notes: plant.notes ?? '',
   };
 }

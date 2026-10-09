@@ -29,6 +29,10 @@
   animation-delay: calc(var(--reveal-step) * 5);
 }
 
+.section:nth-child(6) {
+  animation-delay: calc(var(--reveal-step) * 6);
+}
+
 @keyframes rise {
   from {
     opacity: 0;

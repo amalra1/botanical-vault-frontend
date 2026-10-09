@@ -23,6 +23,7 @@ const EMPTY_PLANT = {
   commonName: '',
   scientificName: '',
   originIds: [],
+  lightExposures: [],
   notes: '',
 };
 const FILE_LIST_SEPARATOR = ', ';

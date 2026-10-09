@@ -13,6 +13,10 @@
   text-transform: uppercase;
 }
 
+.optional {
+  color: var(--color-text-subtle);
+}
+
 .hint {
   color: var(--color-text-subtle);
   font-size: var(--text-xs);

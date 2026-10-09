@@ -1,0 +1,22 @@
+.meter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.icon {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  margin-right: var(--space-3xs);
+}
+
+.tick {
+  width: var(--light-meter-tick-width);
+  height: var(--light-meter-tick-height);
+  border-radius: var(--radius);
+  background: var(--color-tag-outline);
+}
+
+.lit {
+  background: var(--color-forest);
+}

@@ -34,6 +34,7 @@
       "origin": "Origem",
       "size": "Porte",
       "view": "Vista da imagem",
+      "light": "Luz",
       "all": "Todas",
       "unclassified": "Sem classificação"
     },
@@ -376,6 +377,29 @@
       "plantNotFound": "Esta planta não existe mais.",
       "loadPlant": "Não foi possível carregar a planta. Tente novamente.",
       "unexpected": "Não foi possível salvar a planta. Tente novamente."
+    }
+  },
+  "light": {
+    "label": "Luz",
+    "optional": "(opcional)",
+    "hint": "Toque nos sóis para marcar. Pode marcar mais de uma.",
+    "empty": "Não informada",
+    "range": "{from} a {to}",
+    "pair": "{first} e {second}",
+    "meter": "Luz: {light}",
+    "options": {
+      "SHADE": {
+        "label": "Sombra",
+        "inline": "sombra"
+      },
+      "PARTIAL_SHADE": {
+        "label": "Meia sombra",
+        "inline": "meia sombra"
+      },
+      "FULL_SUN": {
+        "label": "Sol pleno",
+        "inline": "sol pleno"
+      }
     }
   },
   "plantDetail": {

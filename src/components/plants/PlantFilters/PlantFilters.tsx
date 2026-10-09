@@ -1,3 +1,4 @@
+import { LightFilter } from '@/components/plants/LightFilter/LightFilter';
 import { OriginFilter } from '@/components/plants/OriginFilter/OriginFilter';
 import { SizeFilter } from '@/components/plants/SizeFilter/SizeFilter';
 import { TypeFilter } from '@/components/plants/TypeFilter/TypeFilter';
@@ -38,6 +39,10 @@ export function PlantFilters({
           views={taxonomies.imageViews}
           value={filters.viewId}
           onChange={(viewId) => onChange({ viewId })}
+        />
+        <LightFilter
+          value={filters.lightExposure}
+          onChange={(lightExposure) => onChange({ lightExposure })}
         />
       </div>
     </section>

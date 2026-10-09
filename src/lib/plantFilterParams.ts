@@ -5,6 +5,7 @@ import {
   PLANT_SORT_PARAMS,
   UNCLASSIFIED_ORIGIN,
 } from '@/constants/plantFilters';
+import { lightParamOf, readLightParam } from '@/lib/lightExposure';
 import type {
   OriginFilter,
   PlantFilters,
@@ -33,6 +34,7 @@ export function parsePlantFilters(params: ReadableSearchParams): PlantFilters {
     origin: readOrigin(params.get(FILTER_PARAMS.origin)),
     sizeId: readId(params.get(FILTER_PARAMS.size)),
     viewId: readId(params.get(FILTER_PARAMS.view)),
+    lightExposure: readLightParam(params.get(FILTER_PARAMS.light)),
     sort: readSort(params.get(FILTER_PARAMS.sort)),
   };
 }
@@ -44,6 +46,7 @@ export function serializePlantFilters(filters: PlantFilters) {
     [FILTER_PARAMS.origin, filters.origin],
     [FILTER_PARAMS.size, filters.sizeId],
     [FILTER_PARAMS.view, filters.viewId],
+    [FILTER_PARAMS.light, lightParamOf(filters.lightExposure)],
     [
       FILTER_PARAMS.sort,
       filters.sort === DEFAULT_PLANT_FILTERS.sort
@@ -69,6 +72,7 @@ export function toApiParams(filters: PlantFilters): PlantSearchApiParams {
     unclassified: origin === UNCLASSIFIED_ORIGIN || undefined,
     sizeId: filters.sizeId ?? undefined,
     viewId: filters.viewId ?? undefined,
+    lightExposure: filters.lightExposure ?? undefined,
     sort: PLANT_SORT_API_VALUES[filters.sort],
   };
 }
@@ -79,6 +83,7 @@ export function countActiveFilters(filters: PlantFilters) {
     filters.origin,
     filters.sizeId,
     filters.viewId,
+    filters.lightExposure,
   ].filter((value) => value !== null).length;
 }
 

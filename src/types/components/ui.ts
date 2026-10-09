@@ -144,6 +144,7 @@ export interface FileDropButtonProps {
 
 export interface FieldGroupProps {
   label: string;
+  optionalLabel?: string;
   hint?: string;
   children: ReactNode;
   className?: string;

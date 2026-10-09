@@ -6,6 +6,7 @@ import type {
   PlantSummary,
   PlantTagSource,
 } from '@/types/plant';
+import type { LightExposure } from '@/types/lightExposure';
 import type { DraftImage } from '@/types/plantImage';
 import type { SizeItem, Taxonomies, TaxonomyItem } from '@/types/taxonomy';
 
@@ -80,6 +81,27 @@ export interface SizeStepsProps {
   allLabel?: string;
 }
 
+export interface PlantLightPickerProps {
+  control: Control<PlantFormValues>;
+}
+
+export interface SunArcProps {
+  selected: readonly LightExposure[];
+  onSelect: (exposure: LightExposure) => void;
+  allLabel?: string;
+  onSelectAll?: () => void;
+  compact?: boolean;
+}
+
+export interface SunArcTrackProps {
+  selected: readonly LightExposure[];
+}
+
+export interface LightMeterProps {
+  exposures: readonly LightExposure[];
+  className?: string;
+}
+
 export interface PlantFormFooterProps {
   canSave: boolean;
   isSaving: boolean;
@@ -117,6 +139,7 @@ export interface PlantTagsProps {
   plant: PlantTagSource;
   origins: TaxonomyItem[];
   size?: SizeItem;
+  lightExposures?: readonly LightExposure[];
 }
 
 export type PlantsEmptyVariant = 'noResults' | 'emptyLibrary';

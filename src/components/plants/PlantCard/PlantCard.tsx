@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FavoriteButton } from '@/components/plants/FavoriteButton/FavoriteButton';
+import { LightMeter } from '@/components/plants/LightMeter/LightMeter';
 import { PlantTags } from '@/components/plants/PlantTags/PlantTags';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { PLANT_CARD_IMAGE_SIZES } from '@/constants/plantFilters';
@@ -31,6 +32,10 @@ export function PlantCard({ plant, origins, onOpen }: PlantCardProps) {
         <span className={cx(styles.badge, styles.sizeBadge)}>
           {plant.size.description ?? plant.size.name}
         </span>
+        <LightMeter
+          exposures={plant.lightExposures}
+          className={cx(styles.badge, styles.lightBadge)}
+        />
         <span className={cx(styles.badge, styles.countBadge)}>
           {pluralCopy(plant.imageCount, CARD_COPY.images)}
         </span>

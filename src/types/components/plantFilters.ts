@@ -1,3 +1,4 @@
+import type { LightExposure } from '@/types/lightExposure';
 import type { OriginFilter, PlantFilters, PlantSortKey } from '@/types/plant';
 import type { SizeItem, Taxonomies, TaxonomyItem } from '@/types/taxonomy';
 
@@ -28,6 +29,11 @@ export interface ViewFilterProps {
   views: TaxonomyItem[];
   value: number | null;
   onChange: (viewId: number | null) => void;
+}
+
+export interface LightFilterProps {
+  value: LightExposure | null;
+  onChange: (exposure: LightExposure | null) => void;
 }
 
 export interface FilterToggleButtonProps {

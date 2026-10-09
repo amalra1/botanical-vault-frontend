@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { LIGHT_EXPOSURES } from '@/constants/lightExposure';
 import { PLANT_NAME_MAX_LENGTH } from '@/constants/plantForm';
 import { copy } from '@/data/copy';
 import { formatCopy } from '@/lib/formatCopy';
@@ -18,5 +19,6 @@ export const plantFormSchema = z.object({
   originIds: z.array(z.number()),
   typeId: z.number({ error: PLANT_ERRORS.typeRequired }),
   sizeId: z.number({ error: PLANT_ERRORS.sizeRequired }),
+  lightExposures: z.array(z.enum(LIGHT_EXPOSURES)),
   notes: z.string(),
 });

@@ -5,6 +5,7 @@ import styles from './FieldGroup.module.css';
 
 export function FieldGroup({
   label,
+  optionalLabel,
   hint,
   children,
   className,
@@ -19,6 +20,9 @@ export function FieldGroup({
     >
       <span id={labelId} className={styles.label}>
         {label}
+        {optionalLabel && (
+          <span className={styles.optional}> {optionalLabel}</span>
+        )}
       </span>
       {children}
       {hint && <p className={styles.hint}>{hint}</p>}

@@ -2,6 +2,7 @@
 
 import { useController, useWatch } from 'react-hook-form';
 import { OriginPicker } from '@/components/plants/OriginPicker/OriginPicker';
+import { PlantLightPicker } from '@/components/plants/PlantLightPicker/PlantLightPicker';
 import { PlantNameFields } from '@/components/plants/PlantNameFields/PlantNameFields';
 import { PlantSizePicker } from '@/components/plants/PlantSizePicker/PlantSizePicker';
 import { PlantTypePicker } from '@/components/plants/PlantTypePicker/PlantTypePicker';
@@ -46,6 +47,9 @@ export function PlantFormFields({
       </div>
       <div className={styles.section}>
         <PlantSizePicker control={control} sizes={taxonomies.sizes} />
+      </div>
+      <div className={styles.section}>
+        <PlantLightPicker control={control} />
       </div>
       <div className={styles.section}>
         <TextAreaField

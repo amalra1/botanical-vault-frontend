@@ -24,7 +24,12 @@ export function PlantDetailHeader({
             <p className={styles.scientific}>{plant.scientificName}</p>
           )}
         </div>
-        <PlantTags plant={plant} origins={origins} size={plant.size} />
+        <PlantTags
+          plant={plant}
+          origins={origins}
+          size={plant.size}
+          lightExposures={plant.lightExposures}
+        />
       </div>
       <div className={styles.actions}>
         <FavoriteButton plant={plant} />

@@ -42,3 +42,16 @@
   background: var(--color-surface-subtle);
   color: var(--color-forest);
 }
+
+.light {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  background: var(--color-mint-soft);
+  color: var(--color-forest);
+}
+
+.tagIcon {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}

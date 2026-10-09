@@ -5,6 +5,7 @@ import type {
   UNCLASSIFIED_ORIGIN,
 } from '@/constants/plantFilters';
 import type { plantFormSchema } from '@/schemas/plantFormSchema';
+import type { LightExposure } from './lightExposure';
 import type { SizeItem, TaxonomyItem } from './taxonomy';
 
 export type PlantFormValues = z.infer<typeof plantFormSchema>;
@@ -23,6 +24,7 @@ export interface Plant {
   type: TaxonomyItem;
   size: SizeItem;
   origins: TaxonomyItem[];
+  lightExposures: LightExposure[];
   notes: string | null;
   images: PlantImage[];
   createdAt: string;
@@ -46,6 +48,7 @@ export interface PlantFilters {
   origin: OriginFilter;
   sizeId: number | null;
   viewId: number | null;
+  lightExposure: LightExposure | null;
   sort: PlantSortKey;
 }
 
@@ -56,6 +59,7 @@ export interface PlantSearchApiParams {
   unclassified?: boolean;
   sizeId?: number;
   viewId?: number;
+  lightExposure?: LightExposure;
   sort: (typeof PLANT_SORT_API_VALUES)[PlantSortKey];
 }
 
@@ -66,6 +70,7 @@ export interface PlantSummary {
   type: TaxonomyItem;
   size: SizeItem;
   origins: TaxonomyItem[];
+  lightExposures: LightExposure[];
   imageCount: number;
   coverUrl: string | null;
   favorite: boolean;

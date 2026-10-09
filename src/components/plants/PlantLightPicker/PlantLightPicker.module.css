@@ -1,0 +1,21 @@
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm) var(--space-xl);
+}
+
+.caption {
+  color: var(--color-forest);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+
+.empty {
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--text-3xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}

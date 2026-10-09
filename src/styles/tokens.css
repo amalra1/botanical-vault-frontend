@@ -31,6 +31,7 @@
   --color-warning-text: #5c4300;
   --color-staircase-floor: #d5ded8;
   --color-staircase-bg: #f6f8f6;
+  --color-sun-glow: rgba(105, 255, 147, 0.35);
 
   --color-text: var(--color-forest);
   --color-text-strong: #0b1f14;
@@ -162,6 +163,17 @@
   --size-bar-width: 10px;
   --size-bar-min: 6px;
   --size-bar-max: 22px;
+  --light-arc-width: 320px;
+  --light-arc-width-compact: 240px;
+  --light-stop-size: var(--control-lg);
+  --light-track-width: 2px;
+  --light-range-width: 4px;
+  --light-track-dash: 4 6;
+  --light-glow-spread: 6px;
+  --light-sun-turn: 45deg;
+  --light-sun-scale: 1.15;
+  --light-meter-tick-width: 8px;
+  --light-meter-tick-height: 3px;
   --viewfinder-corner: 8px;
   --viewfinder-corner-width: 2px;
   --viewfinder-corner-from: 0.6;

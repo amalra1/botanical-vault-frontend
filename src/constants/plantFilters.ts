@@ -4,6 +4,7 @@ export const FILTER_PARAMS = {
   origin: 'origem',
   size: 'porte',
   view: 'vista',
+  light: 'luz',
   sort: 'ordem',
 } as const;
 
@@ -27,6 +28,7 @@ export const DEFAULT_PLANT_FILTERS = {
   origin: null,
   sizeId: null,
   viewId: null,
+  lightExposure: null,
   sort: 'name',
 } as const;
 
